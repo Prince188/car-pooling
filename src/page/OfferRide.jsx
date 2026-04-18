@@ -192,6 +192,8 @@ const OfferRide = () => {
                 </div>
                 <div className="help-actions">
                     <button className="btn-outline">See more answers</button>
+                </div>
+                <div className="help-actions publish-btn">
                     <button className="btn-publish-bottom">Publish a ride</button>
                 </div>
             </section>

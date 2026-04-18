@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import '../css/Home.css';
 import { HiSearch, HiPlusCircle, HiUserCircle, HiMenu, HiX } from 'react-icons/hi';
+import { Link } from 'react-router-dom';
 
 
 const Navbar = () => {
@@ -20,9 +21,9 @@ const Navbar = () => {
                     <div className="nav-search-wrapper mobile-only">
                         <HiSearch size={24} />
                     </div>
-                    <button className="nav-action-btn offer-ride" onClick={() => window.location.href = "/offer-ride"}>
+                    <Link to={"/offer-ride"} className='"nav-action-btn offer-ride' >
                         <HiPlusCircle /> Offer a ride
-                    </button>
+                    </Link>
                     <div className="nav-profile">
                         <div className='nav-flag'>
                             <img src="https://flagcdn.com/in.svg" alt="India" />
