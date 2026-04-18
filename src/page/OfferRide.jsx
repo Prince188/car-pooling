@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { HiPlus, HiChevronLeft, HiChevronRight, HiOutlineChatAlt2, HiOutlineShieldCheck, HiOutlineSwitchVertical } from 'react-icons/hi';
-import { FiUserCheck, FiTag, FiCheckCircle, FiClock, FiCar, FiMapPin, FiUsers } from 'react-icons/fi';
+import {  HiChevronLeft, HiChevronRight, HiOutlineChatAlt2, HiOutlineShieldCheck, HiOutlineSwitchVertical } from 'react-icons/hi';
+import { FiUserCheck,  FiCheckCircle, FiClock,  FiMapPin, FiUsers } from 'react-icons/fi';
 import {TfiCar} from 'react-icons/tfi';
 import '../css/OfferRide.css';
 
