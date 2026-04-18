@@ -26,7 +26,7 @@ const OfferRide = () => {
             <section className="offer-hero">
                 <div className="offer-hero-container">
                     <div className="offer-hero-text">
-                        <h1>Become a CarPooling driver and save on travel costs by sharing your ride with passengers.</h1>
+                        <h1>Become a Safar Go driver and save on travel costs by sharing your ride with passengers.</h1>
                     </div>
                     <div className="offer-hero-grid">
                         <form className="price-calc-card" onSubmit={handleSubmit}>
@@ -97,7 +97,7 @@ const OfferRide = () => {
             {/* 3. STATS & TESTIMONIAL */}
             <section className="trust-section">
                 <div className="stats-strip">
-                    <div className="stat-box"><strong>Join 21 million</strong><p>drivers already using CarPooling</p></div>
+                    <div className="stat-box"><strong>Join 21 million</strong><p>drivers already using Safar Go</p></div>
                     <div className="stat-box"><strong>More than 100 million</strong><p>members worldwide</p></div>
                     <div className="stat-box"><strong>Over 40 million</strong><p>rides shared per year</p></div>
                 </div>
@@ -105,7 +105,7 @@ const OfferRide = () => {
                 {/* <div className="testimonial-carousel">
                     <button className="carousel-nav"><HiChevronLeft /></button>
                     <div className="testimonial-card">
-                        <p>"5 years of using CarPooling, dozens of journeys, as many meetings and exchanges, not a single disappointment. THANK YOU!"</p>
+                        <p>"5 years of using Safar Go, dozens of journeys, as many meetings and exchanges, not a single disappointment. THANK YOU!"</p>
                         <span>Simon</span>
                     </div>
                     <button className="carousel-nav"><HiChevronRight /></button>
@@ -118,14 +118,14 @@ const OfferRide = () => {
                 <div className="how-it-works-grid">
                     <div className="video-thumb">
                         <div className="play-overlay">
-                            <h3>1. Create your account on CarPooling</h3>
+                            <h3>1. Create your account on Safar Go</h3>
                         </div>
                     </div>
                     <div className="steps-list">
                         <div className="step-point">
                             <FiUserCheck className="step-icon" />
                             <div>
-                                <h4>Create a CarPooling account</h4>
+                                <h4>Create a Safar Go account</h4>
                                 <p>Add your profile picture, a few words about you and your phone number to increase trust.</p>
                             </div>
                         </div>
@@ -158,7 +158,7 @@ const OfferRide = () => {
                     </div>
                     <div className="support-item">
                         <FiClock />
-                        <h4>CarPooling at your side</h4>
+                        <h4>Safar Go at your side</h4>
                         <p>Benefit from reimbursement for your ride expenses easily through our platform.</p>
                     </div>
                     <div className="support-item">

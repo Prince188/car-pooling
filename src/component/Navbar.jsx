@@ -21,6 +21,9 @@ const Navbar = () => {
                     <div className="nav-search-wrapper mobile-only">
                         <HiSearch size={24} />
                     </div>
+                    {/* <a href="https://www.google.com" target="_blank" className='nav-action-btn offer-ride'>
+                        Improve Us
+                    </a> */}
                     <Link to={"/offer-ride"} className='"nav-action-btn offer-ride' >
                         <HiPlusCircle /> Offer a ride
                     </Link>

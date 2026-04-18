@@ -125,8 +125,8 @@ const Home = () => {
             {/* Testimonial Section */}
             <section className="testimonial-section">
                 <div className="testimonial-text">
-                    <h2>Only on CarPooling...</h2>
-                    <blockquote>"Carpooling's great: I pay a little money to get where I'm going on time, in comfort, and meet great people."</blockquote>
+                    <h2>Only on Safar Go...</h2>
+                    <blockquote>"Safar Go's great: I pay a little money to get where I'm going on time, in comfort, and meet great people."</blockquote>
                     <p className="author">Amit, from Pune</p>
                 </div>
                 <div className="testimonial-img">

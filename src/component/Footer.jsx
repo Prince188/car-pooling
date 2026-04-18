@@ -9,7 +9,7 @@ const Footer = () => {
             <footer className="main-footer">
                 <div className="footer-cols">
                     <div className="footer-col">
-                        <h4>Go anywhere with CarPooling</h4>
+                        <h4>Go anywhere with Safar Go</h4>
                         <ul><li>Popular rides</li><li>Destinations</li></ul>
                     </div>
                     <div className="footer-col">
@@ -25,7 +25,7 @@ const Footer = () => {
                     <div className="social-links">
                         <FaFacebook /> <FaTwitter /> <FaYoutube /> <FaInstagram />
                     </div>
-                    <p>© CarPooling, 2026</p>
+                    <p>© Safar Go, 2026</p>
                 </div>
             </footer>
         </>
