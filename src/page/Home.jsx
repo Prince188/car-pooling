@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React  from 'react';
 import { FiMapPin, FiCalendar, FiUser, FiArrowRight } from 'react-icons/fi';
 import '../css/Home.css';
 import Navbar from '../component/Navbar';
