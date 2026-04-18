@@ -1,8 +1,8 @@
 :root {
     --dark-green: #119822;
     --dark-green: #0b6e18;
-    --light-green: #e6f7ea; 
-    --text-gray: #5f6f73; 
+    --light-green: #e6f7ea;
+    --text-gray: #5f6f73;
     --border-light: #e8f5eb;
 }
 
@@ -240,7 +240,7 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.feature-card p{
+.feature-card p {
     color: var(--text-gray);
     line-height: 1.6;
 }
@@ -345,6 +345,82 @@ blockquote {
     display: flex;
     gap: 20px;
     font-size: 1.5rem;
+}
+
+.google-form {
+    position: fixed;
+    z-index: 100;
+    bottom: 20px;
+    left: 20px;
+    background-color: #2563EB;
+    color: #ffffff;
+    padding: 12px 22px;
+    border-radius: 30px;
+    overflow: hidden;
+    cursor: pointer;
+    font-weight: 500;
+
+    /* Smooth shadow for depth */
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+
+    /* Pulse animation */
+    animation: pulse 2s infinite;
+}
+
+/* Pulse Effect */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.6);
+    }
+
+    70% {
+        box-shadow: 0 0 0 18px rgba(37, 99, 235, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+    }
+}
+
+/* Shine Line */
+.google-form::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -60%;
+    width: 35%;
+    height: 100%;
+    background: linear-gradient(120deg,
+            transparent,
+            rgba(255, 255, 255, 0.9),
+            transparent);
+    transform: skewX(-20deg);
+
+    /* Auto shine */
+    animation: shine 3s infinite;
+}
+
+/* Shine Animation */
+@keyframes shine {
+    0% {
+        left: -50%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+/* Optional Hover Upgrade */
+.google-form:hover {
+    transform: translateY(-2px) scale(1.03);
+    transition: all 0.3s ease;
+}
+
+.google-form a {
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
 }
 
 /* RESPONSIVE QUERIES */

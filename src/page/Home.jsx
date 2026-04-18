@@ -27,120 +27,125 @@ const Home = () => {
 
 
     return (
-        <div className="cp-container">
+        <>
+            <div className="cp-container">
 
-            {/* Hero Section */}
-            <section className="hero-section">
-                <div className="hero-content">
-                    <div className='hero-content-left'>
-                        <h1>Travel anywhere together. Spend smarter.</h1>
-                    </div>
-                    <div className="hero-image-container">
-                        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=1000" alt="Travelers" />
-                    </div>
-                </div>
-
-                {/* Floating Search Area */}
-                <div className="search-area-wrapper">
-                    <div className="search-bar-card">
-                        <div className="search-input-group">
-                            <div className="input-with-icon">
-                                <FiMapPin />
-                                <input type="text" placeholder="Leaving from" />
-                            </div>
-                            <div className="input-with-icon">
-                                <FiMapPin />
-                                <input type="text" placeholder="Going to" />
-                            </div>
-                            <div className="input-with-icon">
-                                <FiCalendar />
-                                <input
-                                    type="text"
-                                    placeholder="Today"
-                                    onFocus={handleDateInteraction}
-                                    onBlur={handleDateBlur}
-                                />
-                            </div>
-                            <div className="input-with-icon">
-                                <FiCalendar />
-                                <input
-                                    type="text"
-                                    placeholder="Return date"
-                                    onFocus={handleDateInteraction}
-                                    onBlur={handleDateBlur}
-                                />
-                            </div>
-                            <div className="input-with-icon">
-                                <FiUser />
-                                <input type="text" placeholder="1 passenger" />
-                            </div>
-                            {/* <button to={"/search"} className="main-search-btn">Search</button> */}
-                            <Link to={"/search"} className="main-search-btn">Search</Link>
+                {/* Hero Section */}
+                <section className="hero-section">
+                    <div className="hero-content">
+                        <div className='hero-content-left'>
+                            <h1>Travel anywhere together. Spend smarter.</h1>
+                        </div>
+                        <div className="hero-image-container">
+                            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=1000" alt="Travelers" />
                         </div>
                     </div>
 
-                    {/* <div className="search-options-external">
+                    {/* Floating Search Area */}
+                    <div className="search-area-wrapper">
+                        <div className="search-bar-card">
+                            <div className="search-input-group">
+                                <div className="input-with-icon">
+                                    <FiMapPin />
+                                    <input type="text" placeholder="Leaving from" />
+                                </div>
+                                <div className="input-with-icon">
+                                    <FiMapPin />
+                                    <input type="text" placeholder="Going to" />
+                                </div>
+                                <div className="input-with-icon">
+                                    <FiCalendar />
+                                    <input
+                                        type="text"
+                                        placeholder="Today"
+                                        onFocus={handleDateInteraction}
+                                        onBlur={handleDateBlur}
+                                    />
+                                </div>
+                                <div className="input-with-icon">
+                                    <FiCalendar />
+                                    <input
+                                        type="text"
+                                        placeholder="Return date"
+                                        onFocus={handleDateInteraction}
+                                        onBlur={handleDateBlur}
+                                    />
+                                </div>
+                                <div className="input-with-icon">
+                                    <FiUser />
+                                    <input type="text" placeholder="1 passenger" />
+                                </div>
+                                {/* <button to={"/search"} className="main-search-btn">Search</button> */}
+                                <Link to={"/search"} className="main-search-btn">Search</Link>
+                            </div>
+                        </div>
+
+                        {/* <div className="search-options-external">
                         <input type="checkbox" id="stays" />
                         <label htmlFor="stays">Show stays</label>
                     </div> */}
-                </div>
-            </section>
+                    </div>
+                </section>
 
-            {/* Features Section */}
-            <section className="features-grid">
-                <div className="feature-card">
-                    <div className="icon-box"><MdModeOfTravel /></div>
-                    <h3>Travel everywhere</h3>
-                    <p>Explore all over India with countless carpool rides.</p>
-                </div>
-                <div className="feature-card">
-                    <div className="icon-box"><GrMoney /></div>
-                    <h3>Prices like nowhere</h3>
-                    <p>Benefit from great-value shared costs on your carpool rides.</p>
-                </div>
-                <div className="feature-card">
-                    <div className="icon-box"><GoShieldCheck /></div>
-                    <h3>Ride with confidence</h3>
-                    <p>Feel secure, knowing you're riding with carpool members with Verified Profiles.</p>
-                </div>
-            </section>
+                {/* Features Section */}
+                <section className="features-grid">
+                    <div className="feature-card">
+                        <div className="icon-box"><MdModeOfTravel /></div>
+                        <h3>Travel everywhere</h3>
+                        <p>Explore all over India with countless carpool rides.</p>
+                    </div>
+                    <div className="feature-card">
+                        <div className="icon-box"><GrMoney /></div>
+                        <h3>Prices like nowhere</h3>
+                        <p>Benefit from great-value shared costs on your carpool rides.</p>
+                    </div>
+                    <div className="feature-card">
+                        <div className="icon-box"><GoShieldCheck /></div>
+                        <h3>Ride with confidence</h3>
+                        <p>Feel secure, knowing you're riding with carpool members with Verified Profiles.</p>
+                    </div>
+                </section>
 
-            {/* Blue Banner */}
-            <section className="share-ride-banner">
-                <div className="banner-content">
-                    <h2>Share your ride. Cut your costs.</h2>
-                    <p>Carpool as a driver to turn your empty seats into lower travel costs. It's simple: publish your ride and get passengers to share your fuel and toll expenses.</p>
-                    <button className="cta-white">
-                        Share your ride <FiArrowRight />
-                    </button>
-                </div>
-            </section>
+                {/* Blue Banner */}
+                <section className="share-ride-banner">
+                    <div className="banner-content">
+                        <h2>Share your ride. Cut your costs.</h2>
+                        <p>Carpool as a driver to turn your empty seats into lower travel costs. It's simple: publish your ride and get passengers to share your fuel and toll expenses.</p>
+                        <button className="cta-white">
+                            Share your ride <FiArrowRight />
+                        </button>
+                    </div>
+                </section>
 
-            {/* Never Miss Section */}
-            <section className="info-split">
-                <div className="info-img">
-                    <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=600" alt="Driver" />
-                </div>
-                <div className="info-text">
-                    <h2>Never miss a carpool!</h2>
-                    <p>We know it's frustrating when you want to book in advance... stay informed and book the best seat!</p>
-                    <button className="find-ride-btn">Find a ride</button>
-                </div>
-            </section>
+                {/* Never Miss Section */}
+                <section className="info-split">
+                    <div className="info-img">
+                        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=600" alt="Driver" />
+                    </div>
+                    <div className="info-text">
+                        <h2>Never miss a carpool!</h2>
+                        <p>We know it's frustrating when you want to book in advance... stay informed and book the best seat!</p>
+                        <button className="find-ride-btn">Find a ride</button>
+                    </div>
+                </section>
 
-            {/* Testimonial Section */}
-            <section className="testimonial-section">
-                <div className="testimonial-text">
-                    <h2>Only on Safar Go...</h2>
-                    <blockquote>"Safar Go's great: I pay a little money to get where I'm going on time, in comfort, and meet great people."</blockquote>
-                    <p className="author">Amit, from Pune</p>
-                </div>
-                <div className="testimonial-img">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=600" alt="User" />
-                </div>
-            </section>
+                {/* Testimonial Section */}
+                <section className="testimonial-section">
+                    <div className="testimonial-text">
+                        <h2>Only on Safar Go...</h2>
+                        <blockquote>"Safar Go's great: I pay a little money to get where I'm going on time, in comfort, and meet great people."</blockquote>
+                        <p className="author">Amit, from Pune</p>
+                    </div>
+                    <div className="testimonial-img">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=600" alt="User" />
+                    </div>
+                </section>
 
-        </div>
+            </div>
+            <div className='google-form'>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeFVuh_a86LUXsuudQg8m4YIhNozYjpGCsmBVHSpPOE8MvUlQ/viewform?usp=publish-editor" target='_blank'>Improve Us </a>
+            </div>
+        </>
     );
 };
 
