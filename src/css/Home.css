@@ -1,8 +1,9 @@
 :root {
-    --primary-blue: #00AFF5;
-    --dark-blue: #054752;
-    --text-gray: #708C91;
-    --border-light: #f0f0f0;
+    --dark-green: #119822;
+    --dark-green: #0b6e18;
+    --light-green: #e6f7ea; 
+    --text-gray: #5f6f73; 
+    --border-light: #e8f5eb;
 }
 
 * {
@@ -35,7 +36,7 @@ body {
 .logo-text {
     font-size: 1.8rem;
     font-weight: 800;
-    color: var(--primary-blue);
+    color: var(--dark-green);
     letter-spacing: -1px;
 }
 
@@ -45,13 +46,13 @@ body {
     gap: 20px;
 }
 
-.nav-links a{
+.nav-links a {
     text-decoration: none;
     font-weight: 600;
     transition: color 0.2s ease;
 }
 
-.nav-search-wrapper{
+.nav-search-wrapper {
     display: flex;
     align-items: center;
     width: fit-content;
@@ -61,13 +62,13 @@ body {
     display: none;
     font-size: 1.8rem;
     cursor: pointer;
-    color: var(--primary-blue);
+    color: var(--dark-green);
 }
 
 .offer-ride {
     background: none;
-    border: 2px solid var(--primary-blue);
-    color: var(--primary-blue);
+    border: 2px solid var(--dark-green);
+    color: var(--dark-green);
     padding: 10px 20px;
     border-radius: 30px;
     font-weight: 700;
@@ -203,7 +204,7 @@ body {
 }
 
 .main-search-btn {
-    background: var(--primary-blue);
+    background: var(--dark-green);
     color: white;
     border: none;
     font-weight: 700;
@@ -230,7 +231,7 @@ body {
 }
 
 .share-ride-banner {
-    background: var(--dark-blue);
+    background: var(--dark-green);
     color: white;
     margin: 40px 5%;
     padding: 60px;
@@ -240,7 +241,7 @@ body {
 
 .cta-white {
     background: white;
-    color: var(--primary-blue);
+    color: var(--dark-green);
     border: none;
     padding: 14px 30px;
     border-radius: 30px;
@@ -273,7 +274,7 @@ body {
 }
 
 .find-ride-btn {
-    background: var(--primary-blue);
+    background: var(--dark-green);
     color: white;
     border: none;
     padding: 14px 30px;
@@ -285,7 +286,7 @@ body {
 blockquote {
     font-size: 1.3rem;
     font-style: italic;
-    border-left: 4px solid var(--primary-blue);
+    border-left: 4px solid var(--dark-green);
     padding-left: 20px;
     margin: 20px 0;
     color: var(--text-gray);

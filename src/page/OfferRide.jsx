@@ -102,14 +102,14 @@ const OfferRide = () => {
                     <div className="stat-box"><strong>Over 40 million</strong><p>rides shared per year</p></div>
                 </div>
 
-                <div className="testimonial-carousel">
+                {/* <div className="testimonial-carousel">
                     <button className="carousel-nav"><HiChevronLeft /></button>
                     <div className="testimonial-card">
                         <p>"5 years of using CarPooling, dozens of journeys, as many meetings and exchanges, not a single disappointment. THANK YOU!"</p>
                         <span>Simon</span>
                     </div>
                     <button className="carousel-nav"><HiChevronRight /></button>
-                </div>
+                </div> */}
             </section>
 
             {/* 4. PUBLISH IN MINUTES */}
@@ -193,9 +193,9 @@ const OfferRide = () => {
                 <div className="help-actions">
                     <button className="btn-outline">See more answers</button>
                 </div>
-                <div className="help-actions publish-btn">
+                {/* <div className="help-actions publish-btn">
                     <button className="btn-publish-bottom">Publish a ride</button>
-                </div>
+                </div> */}
             </section>
         </div>
     );
