@@ -5,12 +5,18 @@
     --border-light: #f0f0f0;
 }
 
+* {
+    box-sizing: border-box;
+    /* Prevents elements from growing wider than 100% due to padding */
+}
+
 body {
     margin: 0;
     padding: 0;
     font-family: 'Inter', sans-serif;
     color: var(--dark-blue);
     overflow-x: hidden;
+    width: 100%;
 }
 
 /* Navbar */
@@ -114,7 +120,8 @@ body {
     position: absolute;
     bottom: -35px;
     left: 5%;
-    right: 5%;
+    width: 90%;
+    /* Changed from right: 5% to width for better calculation */
     z-index: 10;
 }
 
@@ -122,12 +129,21 @@ body {
     background: white;
     border-radius: 16px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    width: 100%;
 }
 
 .search-input-group {
     display: grid;
-    grid-template-columns: 1.5fr 1.5fr 1fr 1fr 1fr 0.8fr;
+    /* Use minmax to ensure columns don't collapse too small */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    width: 100%;
+}
+
+/* Specific desktop layout since you had 6 items */
+@media (min-width: 1025px) {
+    .search-input-group {
+        grid-template-columns: 1.5fr 1.5fr 1fr 1fr 1fr 0.8fr;
+    }
 }
 
 .input-with-icon {
@@ -136,11 +152,13 @@ body {
     padding: 20px 15px;
     border-right: 1px solid var(--border-light);
     position: relative;
+    width: 100%;
 }
 
 .input-with-icon svg {
     color: var(--text-gray);
     font-size: 1.2rem;
+    flex-shrink: 0;
 }
 
 .input-with-icon input {
@@ -159,6 +177,8 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
+    left: 0;
+    top: 0;
     opacity: 0;
     cursor: pointer;
 }
@@ -170,6 +190,8 @@ body {
     font-weight: 700;
     font-size: 1.1rem;
     cursor: pointer;
+    padding: 15px;
+    height: 100%;
 }
 
 .search-options-external {
@@ -281,15 +303,17 @@ blockquote {
 
 @media (max-width: 1024px) {
     .search-input-group {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        /* 2x3 grid is more stable than 3x2 */
     }
 
-    .input-with-icon:nth-child(3n) {
-        border-right: none;
+    .input-with-icon {
+        border-right: 1px solid var(--border-light);
+        border-bottom: 1px solid var(--border-light);
     }
 
     .main-search-btn {
-        grid-column: span 3;
+        grid-column: span 2;
         padding: 20px;
     }
 
@@ -319,6 +343,11 @@ blockquote {
         display: flex;
     }
 
+    .hero-section {
+        padding-bottom: 30px;
+        /* Reduced to avoid large gap */
+    }
+
     .hero-content {
         flex-direction: column-reverse;
         text-align: center;
@@ -326,11 +355,14 @@ blockquote {
 
     .hero-content-left h1 {
         font-size: 2.2rem;
+        max-width: 100%;
     }
 
     .search-area-wrapper {
         position: relative;
         bottom: 0;
+        left: 0;
+        width: 100%;
         margin-top: 30px;
     }
 
@@ -350,6 +382,7 @@ blockquote {
 
     .features-grid {
         grid-template-columns: 1fr;
+        padding-top: 60px;
     }
 
     .info-split,
@@ -362,6 +395,7 @@ blockquote {
     .footer-cols {
         grid-template-columns: 1fr;
         text-align: center;
+        gap: 20px;
     }
 
     .footer-bottom {
