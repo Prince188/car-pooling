@@ -1,8 +1,6 @@
 import React  from 'react';
 import { FiMapPin, FiCalendar, FiUser, FiArrowRight } from 'react-icons/fi';
 import '../css/Home.css';
-import Navbar from '../component/Navbar';
-import Footer from '../component/Footer';
 
 const Home = () => {
 
@@ -25,7 +23,6 @@ const Home = () => {
 
     return (
         <div className="cp-container">
-            <Navbar />
 
             {/* Hero Section */}
             <section className="hero-section">
@@ -137,8 +134,6 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* Footer */}
-            <Footer />
         </div>
     );
 };
