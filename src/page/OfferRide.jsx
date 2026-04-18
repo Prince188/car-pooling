@@ -62,9 +62,6 @@ const OfferRide = () => {
                                     />
                                 </div>
                             </div>
-                            <div className="price-result">
-                                <h2>Save up to <span>₹1,792</span> on your first ride.</h2>
-                            </div>
                             <button type="submit" className="btn-publish">Publish a ride</button>
                         </form>
 

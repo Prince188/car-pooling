@@ -144,6 +144,7 @@
     font-size: 1.1rem;
     font-weight: 800;
     cursor: pointer;
+    margin-top: 10px;
     box-shadow: 0 4px 14px rgba(0, 175, 245, 0.3);
     transition: var(--transition);
 }

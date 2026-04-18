@@ -1,6 +1,11 @@
-import React  from 'react';
+import React from 'react';
 import { FiMapPin, FiCalendar, FiUser, FiArrowRight } from 'react-icons/fi';
+import { MdModeOfTravel } from "react-icons/md";
+import { GrMoney } from "react-icons/gr";
+import { GoShieldCheck } from "react-icons/go";
+
 import '../css/Home.css';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
 
@@ -69,7 +74,8 @@ const Home = () => {
                                 <FiUser />
                                 <input type="text" placeholder="1 passenger" />
                             </div>
-                            <button className="main-search-btn">Search</button>
+                            {/* <button to={"/search"} className="main-search-btn">Search</button> */}
+                            <Link to={"/search"} className="main-search-btn">Search</Link>
                         </div>
                     </div>
 
@@ -83,17 +89,17 @@ const Home = () => {
             {/* Features Section */}
             <section className="features-grid">
                 <div className="feature-card">
-                    <div className="icon-box">📋</div>
+                    <div className="icon-box"><MdModeOfTravel /></div>
                     <h3>Travel everywhere</h3>
                     <p>Explore all over India with countless carpool rides.</p>
                 </div>
                 <div className="feature-card">
-                    <div className="icon-box">💰</div>
+                    <div className="icon-box"><GrMoney /></div>
                     <h3>Prices like nowhere</h3>
                     <p>Benefit from great-value shared costs on your carpool rides.</p>
                 </div>
                 <div className="feature-card">
-                    <div className="icon-box">🛡️</div>
+                    <div className="icon-box"><GoShieldCheck /></div>
                     <h3>Ride with confidence</h3>
                     <p>Feel secure, knowing you're riding with carpool members with Verified Profiles.</p>
                 </div>
