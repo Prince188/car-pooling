@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import {  HiChevronLeft, HiChevronRight, HiOutlineChatAlt2, HiOutlineShieldCheck, HiOutlineSwitchVertical } from 'react-icons/hi';
-import { FiUserCheck,  FiCheckCircle, FiClock,  FiMapPin, FiUsers } from 'react-icons/fi';
-import {TfiCar} from 'react-icons/tfi';
+import { HiOutlineChatAlt2, HiOutlineShieldCheck, HiOutlineSwitchVertical } from 'react-icons/hi';
+import { FiUserCheck, FiCheckCircle, FiClock, FiMapPin, FiUsers } from 'react-icons/fi';
+import { TfiCar } from 'react-icons/tfi';
 import '../css/OfferRide.css';
 
 const OfferRide = () => {
@@ -190,9 +190,9 @@ const OfferRide = () => {
                         <p>It only takes a minute to cancel a listed ride... <a href="/offer-ride">Read more</a></p>
                     </div>
                 </div>
-                <div className="help-actions">
+                {/* <div className="help-actions">
                     <button className="btn-outline">See more answers</button>
-                </div>
+                </div> */}
                 {/* <div className="help-actions publish-btn">
                     <button className="btn-publish-bottom">Publish a ride</button>
                 </div> */}
