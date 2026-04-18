@@ -42,7 +42,13 @@ body {
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 20px;
+}
+
+.nav-search-wrapper{
+    display: flex;
+    align-items: center;
+    width: fit-content;
 }
 
 .mobile-toggle {
@@ -129,6 +135,7 @@ body {
 }
 
 .search-bar-card {
+    overflow: hidden;
     background: white;
     border-radius: 16px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
@@ -137,6 +144,7 @@ body {
 
 .search-input-group {
     display: grid;
+    overflow: hidden;
     /* Use minmax to ensure columns don't collapse too small */
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     width: 100%;
@@ -145,6 +153,8 @@ body {
 /* Specific desktop layout since you had 6 items */
 @media (min-width: 1025px) {
     .search-input-group {
+        overflow: hidden;
+
         grid-template-columns: 1.5fr 1.5fr 1fr 1fr 1fr 0.8fr;
     }
 }
@@ -306,6 +316,7 @@ blockquote {
 
 @media (max-width: 1024px) {
     .search-input-group {
+        overflow: hidden;
         grid-template-columns: repeat(2, 1fr);
         /* 2x3 grid is more stable than 3x2 */
     }
@@ -370,6 +381,7 @@ blockquote {
     }
 
     .search-input-group {
+        overflow: hidden;
         grid-template-columns: 1fr;
     }
 

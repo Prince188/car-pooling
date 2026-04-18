@@ -36,7 +36,6 @@ const Home = () => {
                 <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
                     <div className="nav-search-wrapper mobile-only">
                         <HiSearch size={24} />
-                        <span>Search</span>
                     </div>
                     <button className="nav-action-btn offer-ride" onClick={() => window.location.href = "/offer-ride"}>
                         <HiPlusCircle /> Offer a ride
