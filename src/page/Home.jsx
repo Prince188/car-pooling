@@ -23,6 +23,7 @@ const Home = () => {
         if (!e.target.value) e.target.type = "text";
     };
 
+
     return (
         <div className="cp-container">
             {/* Navbar */}
@@ -30,14 +31,14 @@ const Home = () => {
                 <div className="nav-logo">
                     <span className="logo-text">CarPooling</span>
                 </div>
-                
+
                 {/* Mobile Menu Overlay for responsive */}
                 <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
                     <div className="nav-search-wrapper mobile-only">
                         <HiSearch size={24} />
                         <span>Search</span>
                     </div>
-                    <button className="nav-action-btn offer-ride">
+                    <button className="nav-action-btn offer-ride" onClick={() => window.location.href = "/offer-ride"}>
                         <HiPlusCircle /> Offer a ride
                     </button>
                     <div className="nav-profile">
@@ -78,20 +79,20 @@ const Home = () => {
                             </div>
                             <div className="input-with-icon">
                                 <FiCalendar />
-                                <input 
-                                    type="text" 
-                                    placeholder="Today" 
-                                    onFocus={handleDateInteraction} 
-                                    onBlur={handleDateBlur} 
+                                <input
+                                    type="text"
+                                    placeholder="Today"
+                                    onFocus={handleDateInteraction}
+                                    onBlur={handleDateBlur}
                                 />
                             </div>
                             <div className="input-with-icon">
                                 <FiCalendar />
-                                <input 
-                                    type="text" 
-                                    placeholder="Return date" 
-                                    onFocus={handleDateInteraction} 
-                                    onBlur={handleDateBlur} 
+                                <input
+                                    type="text"
+                                    placeholder="Return date"
+                                    onFocus={handleDateInteraction}
+                                    onBlur={handleDateBlur}
                                 />
                             </div>
                             <div className="input-with-icon">
