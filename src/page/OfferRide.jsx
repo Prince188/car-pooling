@@ -175,19 +175,19 @@ const OfferRide = () => {
                 <div className="faq-grid">
                     <div className="faq-item">
                         <h4>How do I set the passenger contribution for my ride?</h4>
-                        <p>We recommend a contribution per passenger... <a >Read more</a></p>
+                        <p>We recommend a contribution per passenger... <a href="">Read more</a></p>
                     </div>
                     <div className="faq-item">
                         <h4>When do I get my money?</h4>
-                        <p>We send your money 48 hours after the ride... <a >Read more</a></p>
+                        <p>We send your money 48 hours after the ride... <a href="">Read more</a></p>
                     </div>
                     <div className="faq-item">
                         <h4>What should I do if there's an error with my ride?</h4>
-                        <p>You should edit your ride as soon as you spot the error... <a >Read more</a></p>
+                        <p>You should edit your ride as soon as you spot the error... <a href="">Read more</a></p>
                     </div>
                     <div className="faq-item">
                         <h4>How do I cancel a carpool ride as a driver?</h4>
-                        <p>It only takes a minute to cancel a listed ride... <a>Read more</a></p>
+                        <p>It only takes a minute to cancel a listed ride... <a href="">Read more</a></p>
                     </div>
                 </div>
                 <div className="help-actions">
