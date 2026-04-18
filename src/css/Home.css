@@ -2,14 +2,15 @@
     --primary-blue: #00AFF5;
     --dark-blue: #054752;
     --text-gray: #708C91;
-    --border-light: #DDD;
+    --border-light: #f0f0f0;
 }
 
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: 'Inter', -apple-system, sans-serif;
     color: var(--dark-blue);
+    background-color: #fff;
 }
 
 /* Navbar */
@@ -18,7 +19,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 12px 5%;
-    background: #fff;
+    border-bottom: 1px solid var(--border-light);
 }
 
 .logo-text {
@@ -31,24 +32,27 @@ body {
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 20px;
+}
+
+.nav-search-icon {
+    color: var(--primary-blue);
+    cursor: pointer;
 }
 
 .nav-action-btn {
     background: none;
     border: none;
-    color: var(--primary-blue);
     display: flex;
     align-items: center;
     gap: 8px;
     font-size: 1rem;
-    font-weight: 500;
     cursor: pointer;
 }
 
 .offer-ride {
     color: var(--primary-blue);
-    padding: 8px 16px;
+    padding: 10px 20px;
     border: 2px solid var(--primary-blue);
     border-radius: 30px;
     font-weight: 700;
@@ -62,17 +66,16 @@ body {
 
 .nav-flag {
     width: 24px;
-    border-radius: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 24px;
+    border-radius: 50%;
     overflow: hidden;
-    aspect-ratio: 1/1;
-    cursor: pointer;
+    display: flex;
+    border: 1px solid #eee;
 }
 
 .nav-flag img {
-    width: 36px;
+    width: 100%;
+    object-fit: cover;
 }
 
 .profile-icon {
@@ -84,7 +87,7 @@ body {
 /* Hero Section */
 .hero-section {
     position: relative;
-    padding: 60px 5% 120px;
+    padding: 40px 5% 120px;
 }
 
 .hero-content {
@@ -93,12 +96,11 @@ body {
     align-items: center;
 }
 
-.hero-content-left {
-    width: 50%;
-}
-
 .hero-content-left h1 {
-    font-size: 3.4rem;
+    font-size: 3.5rem;
+    line-height: 1.1;
+    font-weight: 800;
+    max-width: 450px;
 }
 
 .hero-image-container img {
@@ -108,7 +110,7 @@ body {
     border-radius: 24px;
 }
 
-/* SEARCH AREA FIX */
+/* Search Area Wrapper */
 .search-area-wrapper {
     position: absolute;
     bottom: -35px;
@@ -120,43 +122,42 @@ body {
 .search-bar-card {
     background: white;
     border-radius: 16px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
 }
 
 .search-input-group {
     display: grid;
-    grid-template-columns: 1.5fr 1.5fr 1fr 1fr 1.2fr 1fr;
+    grid-template-columns: 1.5fr 1.5fr 1fr 1fr 1fr 0.8fr;
+    align-items: stretch;
 }
-
-/* ... keep your existing root and container styles ... */
 
 .input-with-icon {
     display: flex;
     align-items: center;
-    padding: 15px;
-    /* Adjust based on your preferred height */
-    border-right: 1px solid #eee;
-    background-color: #fff;
+    padding: 18px 15px;
+    border-right: 1px solid var(--border-light);
+    position: relative;
 }
 
-/* Specific styling for Date inputs */
-.input-with-icon input[type="date"] {
+.input-with-icon svg {
+    color: var(--text-gray);
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.input-with-icon input {
     border: none;
     outline: none;
-    padding-left: 10px;
+    padding-left: 12px;
     width: 100%;
     font-size: 1rem;
-    font-family: inherit;
     color: var(--dark-blue);
+    font-family: inherit;
     background: transparent;
     cursor: pointer;
-    /* Appearance reset */
-    appearance: none;
-    -webkit-appearance: none;
 }
 
-/* Hides the native calendar icon in Chrome/Safari/Edge */
+/* Hide native icon and force alignment */
 .input-with-icon input[type="date"]::-webkit-calendar-picker-indicator {
     background: transparent;
     bottom: 0;
@@ -170,41 +171,6 @@ body {
     width: auto;
 }
 
-/* Ensures the container is the relative parent for the absolute indicator above */
-.input-with-icon {
-    position: relative;
-}
-
-/* Adjusting the search input group for better alignment with date types */
-.search-input-group {
-    display: grid;
-    grid-template-columns: 1.5fr 1.5fr 1fr 1fr 1fr 0.8fr;
-    align-items: stretch;
-    /* Ensures all inputs have the same height */
-}
-
-/* Make sure the text placeholder looks consistent since date inputs 
-   often show (dd/mm/yyyy) by default in some browsers */
-.input-with-icon input::placeholder {
-    color: var(--text-gray);
-    opacity: 1;
-}
-
-
-.input-with-icon svg {
-    color: var(--text-gray);
-    font-size: 1.2rem;
-}
-
-.input-with-icon input {
-    border: none;
-    outline: none;
-    padding-left: 10px;
-    width: 100%;
-    font-size: 1rem;
-    color: var(--dark-blue);
-}
-
 .main-search-btn {
     background: var(--primary-blue);
     color: white;
@@ -212,22 +178,21 @@ body {
     font-size: 1.1rem;
     font-weight: 700;
     cursor: pointer;
-    transition: background 0.2s;
+    border-radius: 0 16px 16px 0;
 }
 
 .search-options-external {
     margin-top: 15px;
     display: flex;
     align-items: center;
-    gap: 8px;
-    font-weight: 500;
-    font-size: 0.95rem;
+    gap: 10px;
+    font-weight: 600;
     color: var(--dark-blue);
 }
 
 .search-options-external input {
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
     accent-color: var(--primary-blue);
 }
 
@@ -236,21 +201,20 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 60px;
-    padding: 120px 5% 60px;
+    padding: 100px 5% 50px;
 }
 
 .feature-card h3 {
     font-size: 1.4rem;
-    margin-bottom: 12px;
+    margin: 15px 0 10px;
 }
 
 .feature-card p {
     color: var(--text-gray);
-    line-height: 1.5;
-    font-size: 1rem;
+    line-height: 1.6;
 }
 
-/* Banner */
+/* Blue Banner */
 .share-ride-banner {
     background: var(--dark-blue);
     color: white;
@@ -262,14 +226,13 @@ body {
 
 .share-ride-banner h2 {
     font-size: 2.2rem;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .share-ride-banner p {
     max-width: 650px;
     margin: 0 auto 30px;
     opacity: 0.9;
-    line-height: 1.6;
 }
 
 .cta-white {
@@ -281,35 +244,29 @@ body {
     font-weight: 700;
     display: inline-flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     cursor: pointer;
 }
 
-/* Info Split */
+/* Split Sections */
 .info-split,
 .testimonial-section {
     display: flex;
     padding: 60px 5%;
     align-items: center;
-    gap: 80px;
+    gap: 60px;
 }
 
 .info-img img,
 .testimonial-img img {
-    aspect-ratio: 16/9;
-    object-fit: cover;
     width: 100%;
     border-radius: 24px;
-}
-
-.info-text,
-.testimonial-text {
-    flex: 1;
+    object-fit: cover;
 }
 
 .info-text h2,
 .testimonial-text h2 {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     margin-bottom: 20px;
 }
 
@@ -317,38 +274,36 @@ body {
     background: var(--primary-blue);
     color: white;
     border: none;
-    padding: 14px 35px;
+    padding: 15px 35px;
     border-radius: 30px;
     font-weight: 700;
-    margin-top: 20px;
 }
 
 blockquote {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-style: italic;
-    margin: 20px 0;
     color: var(--text-gray);
-    border-left: 4px solid var(--primary-blue);
+    border-left: 5px solid var(--primary-blue);
     padding-left: 20px;
+    margin: 30px 0;
 }
 
 /* Footer */
 .main-footer {
     background: #f4f7f8;
-    padding: 80px 5% 30px;
-    margin-top: 80px;
+    padding: 80px 5% 40px;
 }
 
 .footer-cols {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     border-bottom: 1px solid #d1d9dd;
-    padding-bottom: 50px;
+    padding-bottom: 40px;
 }
 
 .footer-col h4 {
+    margin-bottom: 20px;
     font-size: 1.1rem;
-    margin-bottom: 25px;
 }
 
 .footer-col ul {
@@ -360,19 +315,17 @@ blockquote {
     margin-bottom: 12px;
     color: var(--text-gray);
     cursor: pointer;
-    font-size: 0.95rem;
 }
 
 .footer-bottom {
     display: flex;
     justify-content: space-between;
     padding-top: 30px;
-    align-items: center;
 }
 
 .social-links {
-    font-size: 1.6rem;
     display: flex;
     gap: 20px;
+    font-size: 1.5rem;
     color: var(--dark-blue);
 }

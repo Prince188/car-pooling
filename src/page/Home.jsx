@@ -5,6 +5,23 @@ import { FaFacebook, FaTwitter, FaYoutube, FaInstagram } from 'react-icons/fa';
 import '../css/Home.css';
 
 const Home = () => {
+    // Function to handle the click and immediately open the picker
+    const handleDateInteraction = (e) => {
+        e.target.type = "date";
+        // Attempt to open the native picker immediately
+        if (e.target.showPicker) {
+            try {
+                e.target.showPicker();
+            } catch (error) {
+                console.log("Browser doesn't support showPicker() yet");
+            }
+        }
+    };
+
+    const handleDateBlur = (e) => {
+        if (!e.target.value) e.target.type = "text";
+    };
+
     return (
         <div className="cp-container">
             {/* Navbar */}
@@ -13,11 +30,13 @@ const Home = () => {
                     <span className="logo-text">CarPooling</span>
                 </div>
                 <div className="nav-links">
-                    <HiSearch className='nav-action-btn' size={24} />
-                    <button className="nav-action-btn offer-ride"><HiPlusCircle /> Offer a ride</button>
+                    <HiSearch className='nav-search-icon' size={24} />
+                    <button className="nav-action-btn offer-ride">
+                        <HiPlusCircle /> Offer a ride
+                    </button>
                     <div className="nav-profile">
                         <div className='nav-flag'>
-                            <img src="https://flagcdn.com/in.svg" width="20" alt="India" />
+                            <img src="https://flagcdn.com/in.svg" alt="India" />
                         </div>
                         <HiUserCircle className="profile-icon" />
                     </div>
@@ -47,13 +66,25 @@ const Home = () => {
                                 <FiMapPin />
                                 <input type="text" placeholder="Going to" />
                             </div>
+                            {/* Improved Date Input 1 */}
                             <div className="input-with-icon">
                                 <FiCalendar />
-                                <input type="date" placeholder="Today" />
+                                <input
+                                    type="text"
+                                    placeholder="Today"
+                                    onFocus={handleDateInteraction}
+                                    onBlur={handleDateBlur}
+                                />
                             </div>
+                            {/* Improved Date Input 2 */}
                             <div className="input-with-icon">
                                 <FiCalendar />
-                                <input type="date" placeholder="Return date" />
+                                <input
+                                    type="text"
+                                    placeholder="Return date"
+                                    onFocus={handleDateInteraction}
+                                    onBlur={handleDateBlur}
+                                />
                             </div>
                             <div className="input-with-icon">
                                 <FiUser />
@@ -63,7 +94,6 @@ const Home = () => {
                         </div>
                     </div>
 
-                    {/* Checkbox moved OUTSIDE the white box */}
                     <div className="search-options-external">
                         <input type="checkbox" id="stays" />
                         <label htmlFor="stays">Show stays</label>
@@ -106,7 +136,7 @@ const Home = () => {
                 </div>
                 <div className="info-text">
                     <h2>Never miss a carpool!</h2>
-                    <p>We know it's frustrating when you want to book in advance... with our new alert system, stay informed and book the best seat!</p>
+                    <p>We know it's frustrating when you want to book in advance... stay informed and book the best seat!</p>
                     <button className="find-ride-btn">Find a ride</button>
                 </div>
             </section>
