@@ -1,19 +1,20 @@
-import React from 'react';
-import { HiSearch, HiPlusCircle, HiUserCircle } from 'react-icons/hi';
+import React, { useState } from 'react';
+import { HiSearch, HiPlusCircle, HiUserCircle, HiMenu, HiX } from 'react-icons/hi';
 import { FiMapPin, FiCalendar, FiUser, FiArrowRight } from 'react-icons/fi';
 import { FaFacebook, FaTwitter, FaYoutube, FaInstagram } from 'react-icons/fa';
 import '../css/Home.css';
 
 const Home = () => {
-    // Function to handle the click and immediately open the picker
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    // Forces the native date picker to open on the first click
     const handleDateInteraction = (e) => {
         e.target.type = "date";
-        // Attempt to open the native picker immediately
         if (e.target.showPicker) {
             try {
                 e.target.showPicker();
             } catch (error) {
-                console.log("Browser doesn't support showPicker() yet");
+                console.log("Picker triggered");
             }
         }
     };
@@ -29,8 +30,13 @@ const Home = () => {
                 <div className="nav-logo">
                     <span className="logo-text">CarPooling</span>
                 </div>
-                <div className="nav-links">
-                    <HiSearch className='nav-search-icon' size={24} />
+                
+                {/* Mobile Menu Overlay for responsive */}
+                <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
+                    <div className="nav-search-wrapper mobile-only">
+                        <HiSearch size={24} />
+                        <span>Search</span>
+                    </div>
                     <button className="nav-action-btn offer-ride">
                         <HiPlusCircle /> Offer a ride
                     </button>
@@ -40,6 +46,10 @@ const Home = () => {
                         </div>
                         <HiUserCircle className="profile-icon" />
                     </div>
+                </div>
+
+                <div className="mobile-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                    {isMenuOpen ? <HiX /> : <HiMenu />}
                 </div>
             </nav>
 
@@ -66,24 +76,22 @@ const Home = () => {
                                 <FiMapPin />
                                 <input type="text" placeholder="Going to" />
                             </div>
-                            {/* Improved Date Input 1 */}
                             <div className="input-with-icon">
                                 <FiCalendar />
-                                <input
-                                    type="text"
-                                    placeholder="Today"
-                                    onFocus={handleDateInteraction}
-                                    onBlur={handleDateBlur}
+                                <input 
+                                    type="text" 
+                                    placeholder="Today" 
+                                    onFocus={handleDateInteraction} 
+                                    onBlur={handleDateBlur} 
                                 />
                             </div>
-                            {/* Improved Date Input 2 */}
                             <div className="input-with-icon">
                                 <FiCalendar />
-                                <input
-                                    type="text"
-                                    placeholder="Return date"
-                                    onFocus={handleDateInteraction}
-                                    onBlur={handleDateBlur}
+                                <input 
+                                    type="text" 
+                                    placeholder="Return date" 
+                                    onFocus={handleDateInteraction} 
+                                    onBlur={handleDateBlur} 
                                 />
                             </div>
                             <div className="input-with-icon">
@@ -122,14 +130,16 @@ const Home = () => {
 
             {/* Blue Banner */}
             <section className="share-ride-banner">
-                <h2>Share your ride. Cut your costs.</h2>
-                <p>Carpool as a driver to turn your empty seats into lower travel costs. It's simple: publish your ride and get passengers to share your fuel and toll expenses.</p>
-                <button className="cta-white">
-                    Share your ride <FiArrowRight />
-                </button>
+                <div className="banner-content">
+                    <h2>Share your ride. Cut your costs.</h2>
+                    <p>Carpool as a driver to turn your empty seats into lower travel costs. It's simple: publish your ride and get passengers to share your fuel and toll expenses.</p>
+                    <button className="cta-white">
+                        Share your ride <FiArrowRight />
+                    </button>
+                </div>
             </section>
 
-            {/* Info Sections */}
+            {/* Never Miss Section */}
             <section className="info-split">
                 <div className="info-img">
                     <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=600" alt="Driver" />
@@ -141,6 +151,7 @@ const Home = () => {
                 </div>
             </section>
 
+            {/* Testimonial Section */}
             <section className="testimonial-section">
                 <div className="testimonial-text">
                     <h2>Only on CarPooling...</h2>
@@ -157,26 +168,15 @@ const Home = () => {
                 <div className="footer-cols">
                     <div className="footer-col">
                         <h4>Go anywhere with CarPooling</h4>
-                        <ul>
-                            <li>Popular rides on CarPooling</li>
-                            <li>Popular carpool destinations</li>
-                        </ul>
+                        <ul><li>Popular rides</li><li>Destinations</li></ul>
                     </div>
                     <div className="footer-col">
                         <h4>Travel with carpool</h4>
-                        <ul>
-                            <li>Nashik → Pune</li>
-                            <li>Mumbai → Pune</li>
-                            <li>Pune → Aurangabad</li>
-                        </ul>
+                        <ul><li>Nashik → Pune</li><li>Mumbai → Pune</li></ul>
                     </div>
                     <div className="footer-col">
                         <h4>Find out more</h4>
-                        <ul>
-                            <li>Who we are</li>
-                            <li>How CarPooling works?</li>
-                            <li>Help Centre</li>
-                        </ul>
+                        <ul><li>Who we are</li><li>How it works?</li><li>Help Centre</li></ul>
                     </div>
                 </div>
                 <div className="footer-bottom">

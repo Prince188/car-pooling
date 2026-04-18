@@ -8,9 +8,9 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Inter', -apple-system, sans-serif;
+    font-family: 'Inter', sans-serif;
     color: var(--dark-blue);
-    background-color: #fff;
+    overflow-x: hidden;
 }
 
 /* Navbar */
@@ -19,7 +19,11 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 12px 5%;
+    background: #fff;
     border-bottom: 1px solid var(--border-light);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .logo-text {
@@ -32,30 +36,27 @@ body {
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 25px;
 }
 
-.nav-search-icon {
+.mobile-toggle {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
     color: var(--primary-blue);
-    cursor: pointer;
-}
-
-.nav-action-btn {
-    background: none;
-    border: none;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 1rem;
-    cursor: pointer;
 }
 
 .offer-ride {
+    background: none;
+    border: 2px solid var(--primary-blue);
     color: var(--primary-blue);
     padding: 10px 20px;
-    border: 2px solid var(--primary-blue);
     border-radius: 30px;
     font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .nav-profile {
@@ -69,7 +70,6 @@ body {
     height: 24px;
     border-radius: 50%;
     overflow: hidden;
-    display: flex;
     border: 1px solid #eee;
 }
 
@@ -81,36 +81,35 @@ body {
 .profile-icon {
     font-size: 2.2rem;
     color: #CCC;
-    cursor: pointer;
 }
 
-/* Hero Section */
+/* Hero */
 .hero-section {
     position: relative;
-    padding: 40px 5% 120px;
+    padding: 60px 5% 120px;
 }
 
 .hero-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 40px;
 }
 
 .hero-content-left h1 {
     font-size: 3.5rem;
     line-height: 1.1;
     font-weight: 800;
-    max-width: 450px;
+    max-width: 500px;
 }
 
 .hero-image-container img {
-    width: 580px;
-    height: 380px;
-    object-fit: cover;
+    width: 100%;
+    max-width: 580px;
     border-radius: 24px;
 }
 
-/* Search Area Wrapper */
+/* Search Area */
 .search-area-wrapper {
     position: absolute;
     bottom: -35px;
@@ -123,18 +122,18 @@ body {
     background: white;
     border-radius: 16px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
 .search-input-group {
     display: grid;
     grid-template-columns: 1.5fr 1.5fr 1fr 1fr 1fr 0.8fr;
-    align-items: stretch;
 }
 
 .input-with-icon {
     display: flex;
     align-items: center;
-    padding: 18px 15px;
+    padding: 20px 15px;
     border-right: 1px solid var(--border-light);
     position: relative;
 }
@@ -142,43 +141,35 @@ body {
 .input-with-icon svg {
     color: var(--text-gray);
     font-size: 1.2rem;
-    flex-shrink: 0;
 }
 
 .input-with-icon input {
     border: none;
     outline: none;
-    padding-left: 12px;
+    padding-left: 10px;
     width: 100%;
     font-size: 1rem;
     color: var(--dark-blue);
-    font-family: inherit;
     background: transparent;
     cursor: pointer;
 }
 
-/* Hide native icon and force alignment */
+/* Hide default date icon */
 .input-with-icon input[type="date"]::-webkit-calendar-picker-indicator {
-    background: transparent;
-    bottom: 0;
-    color: transparent;
-    cursor: pointer;
-    height: auto;
-    left: 0;
     position: absolute;
-    right: 0;
-    top: 0;
-    width: auto;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
 }
 
 .main-search-btn {
     background: var(--primary-blue);
     color: white;
     border: none;
-    font-size: 1.1rem;
     font-weight: 700;
+    font-size: 1.1rem;
     cursor: pointer;
-    border-radius: 0 16px 16px 0;
 }
 
 .search-options-external {
@@ -187,68 +178,38 @@ body {
     align-items: center;
     gap: 10px;
     font-weight: 600;
-    color: var(--dark-blue);
 }
 
-.search-options-external input {
-    width: 20px;
-    height: 20px;
-    accent-color: var(--primary-blue);
-}
-
-/* Features */
+/* General Sections */
 .features-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 60px;
-    padding: 100px 5% 50px;
+    gap: 40px;
+    padding: 120px 5% 60px;
 }
 
-.feature-card h3 {
-    font-size: 1.4rem;
-    margin: 15px 0 10px;
-}
-
-.feature-card p {
-    color: var(--text-gray);
-    line-height: 1.6;
-}
-
-/* Blue Banner */
 .share-ride-banner {
     background: var(--dark-blue);
     color: white;
     margin: 40px 5%;
-    padding: 70px;
+    padding: 60px;
     border-radius: 24px;
     text-align: center;
 }
 
-.share-ride-banner h2 {
-    font-size: 2.2rem;
-    margin-bottom: 15px;
-}
-
-.share-ride-banner p {
-    max-width: 650px;
-    margin: 0 auto 30px;
-    opacity: 0.9;
-}
-
 .cta-white {
     background: white;
+    color: var(--primary-blue);
     border: none;
     padding: 14px 30px;
     border-radius: 30px;
-    color: var(--primary-blue);
     font-weight: 700;
+    cursor: pointer;
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    cursor: pointer;
 }
 
-/* Split Sections */
 .info-split,
 .testimonial-section {
     display: flex;
@@ -261,37 +222,39 @@ body {
 .testimonial-img img {
     width: 100%;
     border-radius: 24px;
+    aspect-ratio: 16/10;
     object-fit: cover;
 }
 
-.info-text h2,
-.testimonial-text h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+.info-text,
+.testimonial-text {
+    flex: 1;
 }
 
 .find-ride-btn {
     background: var(--primary-blue);
     color: white;
     border: none;
-    padding: 15px 35px;
+    padding: 14px 30px;
     border-radius: 30px;
     font-weight: 700;
+    margin-top: 20px;
 }
 
 blockquote {
     font-size: 1.3rem;
     font-style: italic;
-    color: var(--text-gray);
-    border-left: 5px solid var(--primary-blue);
+    border-left: 4px solid var(--primary-blue);
     padding-left: 20px;
-    margin: 30px 0;
+    margin: 20px 0;
+    color: var(--text-gray);
 }
 
 /* Footer */
 .main-footer {
     background: #f4f7f8;
-    padding: 80px 5% 40px;
+    padding: 60px 5% 30px;
+    margin-top: 60px;
 }
 
 .footer-cols {
@@ -301,31 +264,108 @@ blockquote {
     padding-bottom: 40px;
 }
 
-.footer-col h4 {
-    margin-bottom: 20px;
-    font-size: 1.1rem;
-}
-
-.footer-col ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-col li {
-    margin-bottom: 12px;
-    color: var(--text-gray);
-    cursor: pointer;
-}
-
 .footer-bottom {
     display: flex;
     justify-content: space-between;
     padding-top: 30px;
+    align-items: center;
 }
 
 .social-links {
     display: flex;
     gap: 20px;
     font-size: 1.5rem;
-    color: var(--dark-blue);
+}
+
+/* RESPONSIVE QUERIES */
+
+@media (max-width: 1024px) {
+    .search-input-group {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .input-with-icon:nth-child(3n) {
+        border-right: none;
+    }
+
+    .main-search-btn {
+        grid-column: span 3;
+        padding: 20px;
+    }
+
+    .hero-content-left h1 {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .mobile-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 30px;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hero-content {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .hero-content-left h1 {
+        font-size: 2.2rem;
+    }
+
+    .search-area-wrapper {
+        position: relative;
+        bottom: 0;
+        margin-top: 30px;
+    }
+
+    .search-input-group {
+        grid-template-columns: 1fr;
+    }
+
+    .input-with-icon {
+        border-right: none;
+        border-bottom: 1px solid var(--border-light);
+    }
+
+    .main-search-btn {
+        grid-column: span 1;
+        border-radius: 0 0 16px 16px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .info-split,
+    .testimonial-section {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .footer-cols {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 20px;
+    }
 }
