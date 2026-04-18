@@ -49,11 +49,11 @@ const Home = () => {
                             </div>
                             <div className="input-with-icon">
                                 <FiCalendar />
-                                <input type="text" placeholder="Today" />
+                                <input type="date" placeholder="Today" />
                             </div>
                             <div className="input-with-icon">
                                 <FiCalendar />
-                                <input type="text" placeholder="Return date" />
+                                <input type="date" placeholder="Return date" />
                             </div>
                             <div className="input-with-icon">
                                 <FiUser />

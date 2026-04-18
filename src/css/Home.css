@@ -60,7 +60,7 @@ body {
     gap: 12px;
 }
 
-.nav-flag{
+.nav-flag {
     width: 24px;
     border-radius: 100px;
     display: flex;
@@ -71,7 +71,7 @@ body {
     cursor: pointer;
 }
 
-.nav-flag img{
+.nav-flag img {
     width: 36px;
 }
 
@@ -93,7 +93,7 @@ body {
     align-items: center;
 }
 
-.hero-content-left{
+.hero-content-left {
     width: 50%;
 }
 
@@ -129,12 +129,67 @@ body {
     grid-template-columns: 1.5fr 1.5fr 1fr 1fr 1.2fr 1fr;
 }
 
+/* ... keep your existing root and container styles ... */
+
 .input-with-icon {
     display: flex;
     align-items: center;
-    padding: 20px 15px;
-    border-right: 1px solid #f0f0f0;
+    padding: 15px;
+    /* Adjust based on your preferred height */
+    border-right: 1px solid #eee;
+    background-color: #fff;
 }
+
+/* Specific styling for Date inputs */
+.input-with-icon input[type="date"] {
+    border: none;
+    outline: none;
+    padding-left: 10px;
+    width: 100%;
+    font-size: 1rem;
+    font-family: inherit;
+    color: var(--dark-blue);
+    background: transparent;
+    cursor: pointer;
+    /* Appearance reset */
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+/* Hides the native calendar icon in Chrome/Safari/Edge */
+.input-with-icon input[type="date"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+    bottom: 0;
+    color: transparent;
+    cursor: pointer;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+}
+
+/* Ensures the container is the relative parent for the absolute indicator above */
+.input-with-icon {
+    position: relative;
+}
+
+/* Adjusting the search input group for better alignment with date types */
+.search-input-group {
+    display: grid;
+    grid-template-columns: 1.5fr 1.5fr 1fr 1fr 1fr 0.8fr;
+    align-items: stretch;
+    /* Ensures all inputs have the same height */
+}
+
+/* Make sure the text placeholder looks consistent since date inputs 
+   often show (dd/mm/yyyy) by default in some browsers */
+.input-with-icon input::placeholder {
+    color: var(--text-gray);
+    opacity: 1;
+}
+
 
 .input-with-icon svg {
     color: var(--text-gray);
