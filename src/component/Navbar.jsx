@@ -12,7 +12,7 @@ const Navbar = () => {
         <>
             {/* Navbar */}
             <nav className="navbar">
-                <Link className="nav-logo">
+                <Link className="nav-logo" to={"/"}>
                     <img src="/logo.png" alt="Safar Go Logo" />
                 </Link>
 
