@@ -12,9 +12,9 @@ const Navbar = () => {
         <>
             {/* Navbar */}
             <nav className="navbar">
-                <div className="nav-logo">
-                    <span className="logo-text">CarPooling</span>
-                </div>
+                <Link className="nav-logo">
+                    <img src="/logo.png" alt="Safar Go Logo" />
+                </Link>
 
                 {/* Mobile Menu Overlay for responsive */}
                 <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>

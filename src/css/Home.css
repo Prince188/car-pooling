@@ -33,11 +33,9 @@ body {
     z-index: 1000;
 }
 
-.logo-text {
-    font-size: 1.8rem;
-    font-weight: 800;
-    color: var(--dark-green);
-    letter-spacing: -1px;
+.nav-logo img {
+    width: 180px;
+    /* height: 40px; */
 }
 
 .nav-links {
