@@ -79,10 +79,10 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <div className="search-options-external">
+                    {/* <div className="search-options-external">
                         <input type="checkbox" id="stays" />
                         <label htmlFor="stays">Show stays</label>
-                    </div>
+                    </div> */}
                 </div>
             </section>
 
