@@ -3,11 +3,15 @@ import { FiMapPin, FiCalendar, FiUser, FiArrowRight } from 'react-icons/fi';
 import { MdModeOfTravel } from "react-icons/md";
 import { GrMoney } from "react-icons/gr";
 import { GoShieldCheck } from "react-icons/go";
+import GooglePlacesAutocomplete from 'react-google-places-autocomplete';
 
 import '../css/Home.css';
 import { Link, useLocation } from 'react-router-dom';
 
 const Home = () => {
+
+    const [from, setFrom] = useState(null);
+    const [to, setTo] = useState(null);
 
     // Forces the native date picker to open on the first click
     const handleDateInteraction = (e) => {
@@ -63,11 +67,41 @@ const Home = () => {
                             <div className="search-input-group">
                                 <div className="input-with-icon">
                                     <FiMapPin />
-                                    <input type="text" placeholder="Leaving from" />
+
+                                    <GooglePlacesAutocomplete
+                                        apiKey="YOUR_GOOGLE_API_KEY"
+                                        selectProps={{
+                                            value: from,
+                                            onChange: setFrom,
+                                            placeholder: "Leaving from",
+                                            styles: {
+                                                control: (base) => ({
+                                                    ...base,
+                                                    border: "none",
+                                                    boxShadow: "none"
+                                                })
+                                            }
+                                        }}
+                                    />
                                 </div>
                                 <div className="input-with-icon">
                                     <FiMapPin />
-                                    <input type="text" placeholder="Going to" />
+
+                                    <GooglePlacesAutocomplete
+                                        apiKey="YOUR_GOOGLE_API_KEY"
+                                        selectProps={{
+                                            value: to,
+                                            onChange: setTo,
+                                            placeholder: "Going to",
+                                            styles: {
+                                                control: (base) => ({
+                                                    ...base,
+                                                    border: "none",
+                                                    boxShadow: "none"
+                                                })
+                                            }
+                                        }}
+                                    />
                                 </div>
                                 <div className="input-with-icon">
                                     <FiCalendar />
