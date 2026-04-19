@@ -9,9 +9,6 @@ import { Link, useLocation } from 'react-router-dom';
 
 const Home = () => {
 
-    const [from, setFrom] = useState(null);
-    const [to, setTo] = useState(null);
-
     // Forces the native date picker to open on the first click
     const handleDateInteraction = (e) => {
         e.target.type = "date";
