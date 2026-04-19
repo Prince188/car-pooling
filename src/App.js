@@ -7,11 +7,13 @@ import OfferRide from './page/OfferRide';
 import Search from './page/Search';
 import AboutUs from './page/AboutUs';
 import NotFound from './page/NotFound';
+import ScrollToTop from './component/ScrollToTop';
 
 function App() {
   return (
     <BrowserRouter>
     <Navbar/>
+    <ScrollToTop/>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/offer-ride' element={<OfferRide />} />
