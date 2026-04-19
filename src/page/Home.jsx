@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FiMapPin, FiCalendar, FiUser, FiArrowRight } from 'react-icons/fi';
 import { MdModeOfTravel } from "react-icons/md";
 import { GrMoney } from "react-icons/gr";
@@ -8,6 +8,49 @@ import '../css/Home.css';
 import { Link, useLocation } from 'react-router-dom';
 
 const Home = () => {
+
+    const [from, setFrom] = useState("");
+    const [to, setTo] = useState("");
+
+    const [fromResults, setFromResults] = useState([]);
+    const [toResults, setToResults] = useState([]);
+
+    // API function
+    const searchPlace = async (query, setResults) => {
+        if (!query) {
+            setResults([]);
+            return;
+        }
+
+        try {
+            const res = await fetch(
+                `https://nominatim.openstreetmap.org/search?q=${query}&format=json&addressdetails=1&countrycodes=in&limit=10`
+            );
+
+            const data = await res.json();
+
+            const filtered = data;
+
+            setResults(filtered.slice(0, 5));
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
+    // debounce
+    useEffect(() => {
+        const delay = setTimeout(() => {
+            searchPlace(from, setFromResults);
+        }, 400);
+        return () => clearTimeout(delay);
+    }, [from]);
+
+    useEffect(() => {
+        const delay = setTimeout(() => {
+            searchPlace(to, setToResults);
+        }, 400);
+        return () => clearTimeout(delay);
+    }, [to]);
 
     // Forces the native date picker to open on the first click
     const handleDateInteraction = (e) => {
@@ -61,13 +104,59 @@ const Home = () => {
                     <div className="search-area-wrapper" id='search-area'>
                         <div className="search-bar-card">
                             <div className="search-input-group">
-                                <div className="input-with-icon">
+                                <div className="input-with-icon" style={{ position: "relative" }}>
                                     <FiMapPin />
-                                    <input type="text" placeholder="Leaving from" />
+
+                                    <input
+                                        type="text"
+                                        placeholder="Leaving from"
+                                        value={from}
+                                        onChange={(e) => setFrom(e.target.value)}
+                                    />
+
+                                    {fromResults.length > 0 && (
+                                        <div className="dropdown">
+                                            {fromResults.map((place) => (
+                                                <div
+                                                    key={place.place_id}
+                                                    className="dropdown-item"
+                                                    onClick={() => {
+                                                        setFrom(place.display_name);
+                                                        setFromResults([]);
+                                                    }}
+                                                >
+                                                    {place.display_name}
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )}
                                 </div>
-                                <div className="input-with-icon">
+                                <div className="input-with-icon" style={{ position: "relative" }}>
                                     <FiMapPin />
-                                    <input type="text" placeholder="Going to" />
+
+                                    <input
+                                        type="text"
+                                        placeholder="Going to"
+                                        value={to}
+                                        onChange={(e) => setTo(e.target.value)}
+                                    />
+
+                                    {toResults.length > 0 && (
+                                        <div className="dropdown">
+                                            {toResults.map((place) => (
+                                                <div
+                                                    key={place.place_id}
+                                                    className="dropdown-item"
+                                                    onClick={() => {
+                                                        setTo(place.display_name);
+                                                        setToResults([]);
+                                                    }}
+                                                >
+                                                    {place.display_name}
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )}
                                 </div>
                                 <div className="input-with-icon">
                                     <FiCalendar />
@@ -92,7 +181,16 @@ const Home = () => {
                                     <input type="text" placeholder="1 passenger" />
                                 </div>
                                 {/* <button to={"/search"} className="main-search-btn">Search</button> */}
-                                <Link to={"/search"} className="main-search-btn">Search</Link>
+                                <Link
+                                    to="/search"
+                                    className="main-search-btn"
+                                    onClick={() => {
+                                        console.log("FROM:", from);
+                                        console.log("TO:", to);
+                                    }}
+                                >
+                                    Search
+                                </Link>
                             </div>
                         </div>
 

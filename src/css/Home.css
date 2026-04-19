@@ -144,12 +144,61 @@ body {
 
 }
 
-.search-bar-card {
+
+.search-bar-card{
+    overflow: visible;
+}
+.search-area-wrapper {
+    overflow: visible !important;
+    /* Critical: allows dropdown to float outside the card */
+}
+
+.search-input-group {
+    overflow: visible !important;
+    /* Critical for grid children */
+}
+
+/* 2. Dropdown Container */
+.dropdown {
+    position: absolute;
+    top: 100%;
+    /* Sits right below the input */
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 9999;
+    /* High z-index to stay above everything */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--border-light);
+    border-top: none;
+    max-height: 250px;
+    overflow-y: auto;
+    margin-top: 2px;
+    border-radius: 0 0 12px 12px;
+}
+
+/* 3. Individual Dropdown Items */
+.dropdown-item {
+    padding: 12px 15px;
+    font-size: 0.95rem;
+    color: var(--dark-blue);
+    cursor: pointer;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background 0.2s ease;
+    /* white-space: nowrap; */
     overflow: hidden;
-    background: white;
-    border-radius: 16px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-    width: 100%;
+    /* text-overflow: ellipsis; */
+    /* Keeps long city names neat */
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+    border-radius: 0 0 12px 12px;
+}
+
+.dropdown-item:hover {
+    background-color: var(--light-green);
+    color: var(--dark-green);
 }
 
 .search-input-group {
@@ -216,6 +265,9 @@ body {
     padding: 15px;
     height: 100%;
     border: 2px solid var(--dark-green);
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+
 }
 
 .search-options-external {
@@ -425,7 +477,7 @@ blockquote {
         display: block;
     }
 
-    .nav-logo img{
+    .nav-logo img {
         width: 120px;
     }
 
