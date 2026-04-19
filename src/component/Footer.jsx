@@ -18,8 +18,10 @@ const Footer = () => {
                     <div className="footer-col">
                         <h4>Travel with carpool</h4>
                         <nav className="footer-nav">
-                            <a href="/route/nashik-pune">Nashik → Pune</a>
-                            <a href="/route/mumbai-pune">Mumbai → Pune</a>
+                            <a href="/route/ahm-srt">Ahmedabad &rarr; Surat</a>
+                            <a href="/route/srt-vad">Surat &rarr; Vadodra</a>
+                            <a href="/route/vls-mhs">Valsad &rarr; Mehsana</a>
+                            <a href="/route/gnd-bhr">Gandhinagar &rarr; Bharuch</a>
                         </nav>
                     </div>
                     <div className="footer-col">
