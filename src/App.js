@@ -6,6 +6,7 @@ import Home from './page/Home';
 import OfferRide from './page/OfferRide';
 import Search from './page/Search';
 import AboutUs from './page/AboutUs';
+import NotFound from './page/NotFound';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path='/offer-ride' element={<OfferRide />} />
         <Route path='/search' element={<Search />} />
         <Route path='/About-us' element={<AboutUs />} />
+        <Route path='*' element={<NotFound />} />
       </Routes>
       <Footer />
     </BrowserRouter>

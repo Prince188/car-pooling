@@ -48,6 +48,11 @@
     transform: translateX(5px);
 }
 
+.footer-nav a:active {
+    color: #0b6e18;
+    transform: translateX(2px);
+}
+
 .footer-bottom {
     display: flex;
     justify-content: space-between;

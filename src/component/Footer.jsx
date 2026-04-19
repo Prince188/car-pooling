@@ -24,7 +24,7 @@ const Footer = () => {
                     <div className="footer-col">
                         <h4>Find out more</h4>
                         <nav className="footer-nav">
-                            <a href="/about">Who we are</a>
+                            <a href="/about-us">Who we are</a>
                             <a href="/how-it-works">How it works?</a>
                             <a href="/help">Help Centre</a>
                         </nav>
@@ -32,10 +32,10 @@ const Footer = () => {
                 </div>
                 <div className="footer-bottom">
                     <div className="social-links">
-                        <a href="#" aria-label="Facebook"><FaFacebook /></a>
-                        <a href="#" aria-label="Twitter"><FaTwitter /></a>
-                        <a href="#" aria-label="YouTube"><FaYoutube /></a>
-                        <a href="#" aria-label="Instagram"><FaInstagram /></a>
+                        <a href="/" aria-label="Facebook"><FaFacebook /></a>
+                        <a href="/" aria-label="Twitter"><FaTwitter /></a>
+                        <a href="/" aria-label="YouTube"><FaYoutube /></a>
+                        <a href="/" aria-label="Instagram"><FaInstagram /></a>
                     </div>
                     <p className="copyright">© Safar Go, 2026</p>
                 </div>
