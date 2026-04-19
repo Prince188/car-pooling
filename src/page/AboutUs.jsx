@@ -126,7 +126,7 @@ const AboutUs = () => {
             </section>
 
             {/* Culture Banner */}
-            <section className="culture-banner">
+            {/* <section className="culture-banner">
                 <div className="culture-content">
                     <div className="culture-left">
                         <h2>Our culture</h2>
@@ -137,7 +137,7 @@ const AboutUs = () => {
                         <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=600" alt="Our Team" />
                     </div>
                 </div>
-            </section>
+            </section> */}
         </div>
     );
 };

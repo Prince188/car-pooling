@@ -9,7 +9,7 @@
 
 .about-container {
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    color: #054752;
+    color: var(--navy-bg);
     line-height: 1.6;
 }
 
@@ -69,21 +69,20 @@
 
 /* Key Figures Section */
 .key-figures {
-    background-color: var(--navy-bg);
+    background-color: var(--dark-green);
     color: white;
     text-align: center;
 }
 
 .key-figures h2 {
-    font-size: 2rem;
-    margin-bottom: 50px;
+    font-size: 1.9rem;
+    margin-bottom: 30px;
 }
 
 .figures-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    margin-bottom: 50px;
+    gap: 10px;
 }
 
 .figure-card {
@@ -134,7 +133,7 @@
 }
 
 .services-card {
-    background-color: #00AFF5;
+    background-color: var(--primary-green);
     /* Using original blue for the app card context */
     border-radius: 24px;
     padding: 60px;
@@ -205,6 +204,7 @@
 /* History Section */
 .history-section {
     background-color: var(--light-green);
+    margin-bottom: 50px;
 }
 
 .history-grid {
@@ -259,7 +259,7 @@
 /* Culture Banner */
 .culture-banner {
     margin: 0 10% 80px;
-    background-color: #40C4FF;
+    background-color: var(--primary-green);
     border-radius: 24px;
     padding: 50px;
     display: flex;
