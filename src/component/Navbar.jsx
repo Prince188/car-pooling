@@ -1,12 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import '../css/Home.css';
-import { HiSearch, HiPlusCircle, HiUserCircle, HiMenu, HiX } from 'react-icons/hi';
+import { HiSearch, HiPlusCircle, HiUserCircle } from 'react-icons/hi';
 import { Link } from 'react-router-dom';
 
 
 const Navbar = () => {
 
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
         <>
