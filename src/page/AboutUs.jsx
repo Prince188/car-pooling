@@ -1,7 +1,6 @@
 import React from 'react';
-import { HiOutlineCurrencyDollar, HiOutlineUsers, HiOutlineGlobeAlt } from 'react-icons/hi2';
+import { HiOutlineCurrencyDollar, HiOutlineUsers } from 'react-icons/hi2';
 import { FaLeaf } from "react-icons/fa";
-import { FiArrowRight } from 'react-icons/fi';
 import '../css/AboutUs.css';
 
 const AboutUs = () => {
