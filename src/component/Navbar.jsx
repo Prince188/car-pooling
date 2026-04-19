@@ -25,19 +25,19 @@ const Navbar = () => {
                         Improve Us
                     </a> */}
                     <Link to={"/offer-ride"} className='"nav-action-btn offer-ride' >
-                        <HiPlusCircle size={16} /> Offer a ride
+                        <HiPlusCircle size={16} /> <span>Offer a ride</span>
                     </Link>
                     <div className="nav-profile">
-                        <div className='nav-flag'>
+                        {/* <div className='nav-flag'>
                             <img src="https://flagcdn.com/in.svg" alt="India" />
-                        </div>
+                        </div> */}
                         <HiUserCircle className="profile-icon" />
                     </div>
                 </div>
 
-                <div className="mobile-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                {/* <div className="mobile-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                     {isMenuOpen ? <HiX /> : <HiMenu />}
-                </div>
+                </div> */}
             </nav>
         </>
     )

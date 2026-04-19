@@ -342,7 +342,7 @@ blockquote {
     animation: pulse 2s infinite;
 }
 
-.google-form a{
+.google-form a {
     color: #ffffff;
     text-decoration: none;
     font-weight: 500;
@@ -425,20 +425,34 @@ blockquote {
         display: block;
     }
 
+    .nav-logo img{
+        width: 120px;
+    }
+
+    .navbar {
+        display: flex;
+    }
+
     .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: white;
-        flex-direction: column;
-        padding: 30px;
-        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        display: flex !important;
+        /* position: absolute; */
+        /* top: 100%; */
+        /* left: 0; */
+        padding: 10px;
     }
 
     .nav-links.active {
-        display: flex;
+        /* display: flex; */
+        flex-direction: row;
+    }
+
+    .offer-ride {
+        padding: 5px;
+        aspect-ratio: 1;
+    }
+
+    .offer-ride span {
+        display: none !important;
     }
 
     .hero-section {
