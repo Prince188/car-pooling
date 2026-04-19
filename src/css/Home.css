@@ -8,7 +8,6 @@
 
 * {
     box-sizing: border-box;
-    /* Prevents elements from growing wider than 100% due to padding */
 }
 
 body {
@@ -35,7 +34,6 @@ body {
 
 .nav-logo img {
     width: 180px;
-    /* height: 40px; */
 }
 
 .nav-links {
@@ -135,7 +133,6 @@ body {
     bottom: -35px;
     left: 5%;
     width: 90%;
-    /* Changed from right: 5% to width for better calculation */
     z-index: 10;
 }
 
@@ -150,16 +147,13 @@ body {
 .search-input-group {
     display: grid;
     overflow: hidden;
-    /* Use minmax to ensure columns don't collapse too small */
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     width: 100%;
 }
 
-/* Specific desktop layout since you had 6 items */
 @media (min-width: 1025px) {
     .search-input-group {
         overflow: hidden;
-
         grid-template-columns: 1.5fr 1.5fr 1fr 1fr 1fr 0.8fr;
     }
 }
@@ -190,7 +184,6 @@ body {
     cursor: pointer;
 }
 
-/* Hide default date icon */
 .input-with-icon input[type="date"]::-webkit-calendar-picker-indicator {
     position: absolute;
     width: 100%;
@@ -320,33 +313,6 @@ blockquote {
     color: var(--text-gray);
 }
 
-/* Footer */
-.main-footer {
-    background: #f4f7f8;
-    padding: 60px 5% 30px;
-    margin-top: 60px;
-}
-
-.footer-cols {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    border-bottom: 1px solid #d1d9dd;
-    padding-bottom: 40px;
-}
-
-.footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 30px;
-    align-items: center;
-}
-
-.social-links {
-    display: flex;
-    gap: 20px;
-    font-size: 1.5rem;
-}
-
 .google-form {
     position: fixed;
     z-index: 100;
@@ -365,6 +331,12 @@ blockquote {
 
     /* Pulse animation */
     animation: pulse 2s infinite;
+}
+
+.google-form a{
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
 }
 
 /* Pulse Effect */
@@ -403,11 +375,11 @@ blockquote {
 /* Shine Animation */
 @keyframes shine {
     0% {
-        left: -50%;
+        left: -60%;
     }
 
     100% {
-        left: 100%;
+        left: 130%;
     }
 }
 
@@ -417,19 +389,11 @@ blockquote {
     transition: all 0.3s ease;
 }
 
-.google-form a {
-    text-decoration: none;
-    color: white;
-    font-weight: 700;
-}
-
 /* RESPONSIVE QUERIES */
-
 @media (max-width: 1024px) {
     .search-input-group {
         overflow: hidden;
         grid-template-columns: repeat(2, 1fr);
-        /* 2x3 grid is more stable than 3x2 */
     }
 
     .input-with-icon {
@@ -470,7 +434,6 @@ blockquote {
 
     .hero-section {
         padding-bottom: 30px;
-        /* Reduced to avoid large gap */
     }
 
     .hero-content {
@@ -516,16 +479,5 @@ blockquote {
         flex-direction: column;
         text-align: center;
         gap: 30px;
-    }
-
-    .footer-cols {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 20px;
-    }
-
-    .footer-bottom {
-        flex-direction: column;
-        gap: 20px;
     }
 }

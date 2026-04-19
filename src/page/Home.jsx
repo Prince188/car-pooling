@@ -143,7 +143,7 @@ const Home = () => {
 
             </div>
             <div className='google-form'>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeFVuh_a86LUXsuudQg8m4YIhNozYjpGCsmBVHSpPOE8MvUlQ/viewform?usp=publish-editor" target='_blank' rel='noopener noreferrer'>Improve Us </a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfw4w_fBdX_0S6urZTIYavT5F4PvTiL4FNGpqk4UNFNYciP3w/viewform?usp=publish-editor" target='_blank' rel='noopener noreferrer'>Improve Us </a>
             </div>
         </>
     );
