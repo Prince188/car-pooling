@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FiMapPin, FiCalendar, FiUser, FiArrowRight } from 'react-icons/fi';
 import { MdModeOfTravel } from "react-icons/md";
 import { GrMoney } from "react-icons/gr";
