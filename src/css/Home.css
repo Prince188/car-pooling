@@ -134,6 +134,12 @@ body {
     left: 5%;
     width: 90%;
     z-index: 10;
+    border: 2px solid;
+    border-radius: 16px;
+    border-color: var(--dark-green);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+
 }
 
 .search-bar-card {
@@ -207,6 +213,7 @@ body {
     cursor: pointer;
     padding: 15px;
     height: 100%;
+    border: 2px solid var(--dark-green);
 }
 
 .search-options-external {
