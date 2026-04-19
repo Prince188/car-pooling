@@ -67,41 +67,11 @@ const Home = () => {
                             <div className="search-input-group">
                                 <div className="input-with-icon">
                                     <FiMapPin />
-
-                                    <GooglePlacesAutocomplete
-                                        apiKey="YOUR_GOOGLE_API_KEY"
-                                        selectProps={{
-                                            value: from,
-                                            onChange: setFrom,
-                                            placeholder: "Leaving from",
-                                            styles: {
-                                                control: (base) => ({
-                                                    ...base,
-                                                    border: "none",
-                                                    boxShadow: "none"
-                                                })
-                                            }
-                                        }}
-                                    />
+                                    <input type="text" placeholder="Leaving from" />
                                 </div>
                                 <div className="input-with-icon">
                                     <FiMapPin />
-
-                                    <GooglePlacesAutocomplete
-                                        apiKey="YOUR_GOOGLE_API_KEY"
-                                        selectProps={{
-                                            value: to,
-                                            onChange: setTo,
-                                            placeholder: "Going to",
-                                            styles: {
-                                                control: (base) => ({
-                                                    ...base,
-                                                    border: "none",
-                                                    boxShadow: "none"
-                                                })
-                                            }
-                                        }}
-                                    />
+                                    <input type="text" placeholder="Going to" />
                                 </div>
                                 <div className="input-with-icon">
                                     <FiCalendar />
