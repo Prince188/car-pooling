@@ -16,7 +16,7 @@ const Navbar = () => {
                 </Link>
 
                 {/* Mobile Menu Overlay for responsive */}
-                <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
+                <div className={`nav-links active`}>
                     <Link to={"/#search-area"} className="nav-search-wrapper mobile-only">
                         <HiSearch size={24} />
                     </Link>
