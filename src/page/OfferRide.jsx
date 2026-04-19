@@ -92,22 +92,22 @@ const OfferRide = () => {
             </section>
 
             {/* 3. STATS & TESTIMONIAL */}
-            <section className="trust-section">
+            {/* <section className="trust-section">
                 <div className="stats-strip">
                     <div className="stat-box"><strong>Join 21 million</strong><p>drivers already using Safar Go</p></div>
                     <div className="stat-box"><strong>More than 100 million</strong><p>members worldwide</p></div>
                     <div className="stat-box"><strong>Over 40 million</strong><p>rides shared per year</p></div>
                 </div>
 
-                {/* <div className="testimonial-carousel">
+                <div className="testimonial-carousel">
                     <button className="carousel-nav"><HiChevronLeft /></button>
                     <div className="testimonial-card">
                         <p>"5 years of using Safar Go, dozens of journeys, as many meetings and exchanges, not a single disappointment. THANK YOU!"</p>
                         <span>Simon</span>
                     </div>
                     <button className="carousel-nav"><HiChevronRight /></button>
-                </div> */}
-            </section>
+                </div>
+            </section> */}
 
             {/* 4. PUBLISH IN MINUTES */}
             <section className="how-it-works">
