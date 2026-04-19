@@ -1,0 +1,318 @@
+:root {
+    --primary-green: #119822;
+    --dark-green: #0b6e18;
+    --light-green: #e6f7ea;
+    --text-gray: #5f6f73;
+    --border-light: #e8f5eb;
+    --navy-bg: #054752;
+}
+
+.about-container {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #054752;
+    line-height: 1.6;
+}
+
+.section-padding {
+    padding: 80px 10%;
+}
+
+/* Hero Section */
+.about-hero {
+    height: 400px;
+    background-image: url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&q=80&w=1600');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+}
+
+.hero-overlay h1 {
+    color: white;
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Intro Section */
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.intro-image img {
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.intro-text h2 {
+    color: var(--primary-green);
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.intro-text p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: var(--text-gray);
+}
+
+/* Key Figures Section */
+.key-figures {
+    background-color: var(--navy-bg);
+    color: white;
+    text-align: center;
+}
+
+.key-figures h2 {
+    font-size: 2rem;
+    margin-bottom: 50px;
+}
+
+.figures-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.figure-card {
+    background: white;
+    color: var(--navy-bg);
+    padding: 30px 20px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    transition: transform 0.3s;
+}
+
+.figure-card:hover {
+    transform: translateY(-5px);
+}
+
+.figure-icon {
+    font-size: 2rem;
+    color: var(--primary-green);
+}
+
+.figure-info strong {
+    display: block;
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+}
+
+.figure-info span {
+    font-size: 0.85rem;
+    color: var(--text-gray);
+}
+
+.cta-outline {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 12px 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* Services Section */
+.services-section {
+    background-color: white;
+}
+
+.services-card {
+    background-color: #00AFF5;
+    /* Using original blue for the app card context */
+    border-radius: 24px;
+    padding: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: white;
+    gap: 40px;
+}
+
+.services-left h3 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.phone-mockup img {
+    width: 100%;
+    max-width: 300px;
+}
+
+.service-item {
+    margin-bottom: 30px;
+}
+
+.service-item h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.service-item p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+/* Founders Section */
+.founders-section h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2rem;
+}
+
+.founders-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.founder-card {
+    text-align: center;
+}
+
+.founder-card img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-bottom: 15px;
+}
+
+.founder-card h4 {
+    margin-bottom: 5px;
+}
+
+.founder-card p {
+    color: var(--text-gray);
+    font-size: 0.9rem;
+}
+
+/* History Section */
+.history-section {
+    background-color: var(--light-green);
+}
+
+.history-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.history-text h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.history-text p {
+    margin-bottom: 20px;
+    color: var(--text-gray);
+}
+
+.history-text a {
+    color: var(--primary-green);
+    text-decoration: none;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.history-visuals {
+    position: relative;
+    height: 400px;
+}
+
+.history-img-1 {
+    width: 250px;
+    border-radius: 12px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.history-img-2 {
+    width: 250px;
+    border-radius: 12px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Culture Banner */
+.culture-banner {
+    margin: 0 10% 80px;
+    background-color: #40C4FF;
+    border-radius: 24px;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.culture-content {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    align-items: center;
+    gap: 40px;
+}
+
+.culture-left h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.culture-left p {
+    margin-bottom: 30px;
+}
+
+.cta-blue {
+    background: white;
+    color: #00AFF5;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.culture-right img {
+    width: 100%;
+    border-radius: 16px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+
+    .intro-grid,
+    .history-grid,
+    .services-card,
+    .culture-content {
+        grid-template-columns: 1fr;
+    }
+
+    .figures-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .founders-grid {
+        grid-template-columns: 1fr;
+    }
+}

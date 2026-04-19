@@ -1,6 +1,7 @@
 import React from 'react';
 import '../css/Footer.css';
 import { FaFacebook, FaTwitter, FaYoutube, FaInstagram } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -24,7 +25,7 @@ const Footer = () => {
                     <div className="footer-col">
                         <h4>Find out more</h4>
                         <nav className="footer-nav">
-                            <a href="/about-us">Who we are</a>
+                            <Link to={"/About-us"}>Who we are</Link>
                             <a href="/how-it-works">How it works?</a>
                             <a href="/help">Help Centre</a>
                         </nav>
