@@ -8,17 +8,19 @@ import Search from './page/Search';
 import AboutUs from './page/AboutUs';
 import NotFound from './page/NotFound';
 import ScrollToTop from './component/ScrollToTop';
+import SearchCarSharing from './page/SearchCarSharing';
 
 function App() {
   return (
     <BrowserRouter>
-    <Navbar/>
-    <ScrollToTop/>
+      <Navbar />
+      <ScrollToTop />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/offer-ride' element={<OfferRide />} />
         <Route path='/search' element={<Search />} />
         <Route path='/About-us' element={<AboutUs />} />
+        <Route path='/Search-car-sharing' element={<SearchCarSharing />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
       <Footer />

@@ -18,14 +18,14 @@ const Navbar = () => {
 
                 {/* Mobile Menu Overlay for responsive */}
                 <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
-                    <div className="nav-search-wrapper mobile-only">
+                    <Link to={"/#search-area"} className="nav-search-wrapper mobile-only">
                         <HiSearch size={24} />
-                    </div>
+                    </Link>
                     {/* <a href="https://www.google.com" target="_blank" className='nav-action-btn offer-ride'>
                         Improve Us
                     </a> */}
                     <Link to={"/offer-ride"} className='"nav-action-btn offer-ride' >
-                        <HiPlusCircle /> Offer a ride
+                        <HiPlusCircle size={16} /> Offer a ride
                     </Link>
                     <div className="nav-profile">
                         <div className='nav-flag'>

@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FiMapPin, FiCalendar, FiUser, FiArrowRight } from 'react-icons/fi';
 import { MdModeOfTravel } from "react-icons/md";
 import { GrMoney } from "react-icons/gr";
 import { GoShieldCheck } from "react-icons/go";
 
 import '../css/Home.css';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Home = () => {
 
@@ -25,6 +25,22 @@ const Home = () => {
         if (!e.target.value) e.target.type = "text";
     };
 
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.hash) {
+            const el = document.getElementById(location.hash.replace("#", ""));
+
+            if (el) {
+                setTimeout(() => {
+                    const yOffset = -200; // adjust based on navbar height
+                    const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+                    window.scrollTo({ top: y, behavior: "smooth" });
+                }, 100);
+            }
+        }
+    }, [location]);
 
     return (
         <>
@@ -42,7 +58,7 @@ const Home = () => {
                     </div>
 
                     {/* Floating Search Area */}
-                    <div className="search-area-wrapper">
+                    <div className="search-area-wrapper" id='search-area'>
                         <div className="search-bar-card">
                             <div className="search-input-group">
                                 <div className="input-with-icon">
