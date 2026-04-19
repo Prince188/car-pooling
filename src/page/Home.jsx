@@ -3,7 +3,6 @@ import { FiMapPin, FiCalendar, FiUser, FiArrowRight } from 'react-icons/fi';
 import { MdModeOfTravel } from "react-icons/md";
 import { GrMoney } from "react-icons/gr";
 import { GoShieldCheck } from "react-icons/go";
-import GooglePlacesAutocomplete from 'react-google-places-autocomplete';
 
 import '../css/Home.css';
 import { Link, useLocation } from 'react-router-dom';
