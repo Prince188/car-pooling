@@ -19,7 +19,7 @@ const AboutUs = () => {
                     <div className="intro-text">
                         <h2>WELCOME TO SAFARGO</h2>
                         <p className="lead-text">
-                            We aren't just an IT service; we are a community-driven marketplace designed to bridge the gap between empty car seats and people heading in the same direction.
+                            Welcome to SAFARGO, where your daily commute becomes a shared journey. We aren't just an IT service; we are a community-driven marketplace designed to bridge the gap between empty car seats and people heading in the same direction. We want to make journeys more affordable, more Greener and more social just like happy trips. 
                         </p>
                         <p>
                             In a world where millions of cars hit the road with only a driver inside while public transportation remains crowded, we saw an opportunity to turn <strong>"wasted space"</strong> into a meaningful connection.
