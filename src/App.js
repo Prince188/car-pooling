@@ -9,6 +9,8 @@ import AboutUs from './page/AboutUs';
 import NotFound from './page/NotFound';
 import ScrollToTop from './component/ScrollToTop';
 import SearchCarSharing from './page/SearchCarSharing';
+import LoginPage from './page/Login';
+import RegisterPage from './page/Register';
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
         <Route path='/search' element={<Search />} />
         <Route path='/About-us' element={<AboutUs />} />
         <Route path='/Search-car-sharing' element={<SearchCarSharing />} />
+        <Route path='/login' element={<LoginPage />} />
+        <Route path='/signup' element={<RegisterPage />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
       <Footer />
