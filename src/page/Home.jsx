@@ -7,6 +7,7 @@ import { GoShieldCheck } from "react-icons/go";
 import '../css/Home.css';
 import { Link, useLocation } from 'react-router-dom';
 
+
 const Home = () => {
 
     const [from, setFrom] = useState("");
@@ -14,6 +15,7 @@ const Home = () => {
 
     const [fromResults, setFromResults] = useState([]);
     const [toResults, setToResults] = useState([]);
+
 
     // API function
     const searchPlace = async (query, setResults) => {
@@ -184,10 +186,14 @@ const Home = () => {
                                 <Link
                                     to="/search"
                                     className="main-search-btn"
-                                    onClick={() => {
-                                        console.log("FROM:", from);
-                                        console.log("TO:", to);
-                                    }}
+                                    // onClick={() => {
+                                    //     navigate("/search", {
+                                    //         state: {
+                                    //             from,
+                                    //             to,
+                                    //         }
+                                    //     })
+                                    // }}
                                 >
                                     Search
                                 </Link>
