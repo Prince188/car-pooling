@@ -3,10 +3,37 @@ import { IoMailOutline, IoLockClosedOutline, IoEyeOutline, IoEyeOffOutline } fro
 // import { FcGoogle } from "react-icons/fc";
 // import { FaGithub } from "react-icons/fa";
 import '../css/Login.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import API from '../api/api';
 
 const LoginPage = () => {
     const [showPassword, setShowPassword] = useState(false);
+    const navigate = useNavigate();
+    const [formData, setFormData] = useState({
+        email: "",
+        password: ""
+    })
+
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        })
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const res = await API.post("/auth/login", formData);
+
+            localStorage.setItem("token", res.data.token);
+            console.log(res.data);
+
+            navigate("/"); // Redirect to home or dashboard
+        } catch (err) {
+            alert(err.response?.data?.message || "Error");
+        }
+    }
 
     return (
         <div className="login-container">
@@ -16,12 +43,12 @@ const LoginPage = () => {
                     <p className="subtitle">Welcome back! Please enter your details.</p>
                 </div>
 
-                <form className="login-form" onSubmit={(e) => e.preventDefault()}>
+                <form className="login-form" onSubmit={handleSubmit}>
                     <div className="input-field">
                         <label>Email Address</label>
                         <div className="input-wrapper">
                             <IoMailOutline className="input-icon" />
-                            <input type="email" placeholder="name@company.com" required />
+                            <input type="email" name='email' placeholder="name@company.com" onChange={handleChange} required />
                         </div>
                     </div>
 
@@ -31,7 +58,9 @@ const LoginPage = () => {
                             <IoLockClosedOutline className="input-icon" />
                             <input
                                 type={showPassword ? "text" : "password"}
+                                name='password'
                                 placeholder="••••••••"
+                                onChange={handleChange}
                                 required
                             />
                             <button

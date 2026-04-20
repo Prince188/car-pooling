@@ -3,10 +3,41 @@ import { IoMailOutline, IoLockClosedOutline, IoEyeOutline, IoEyeOffOutline, IoPe
 // import { FcGoogle } from "react-icons/fc";
 // import { FaGithub } from "react-icons/fa";
 import '../css/Register.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import API from '../api/api';
 
 const RegisterPage = () => {
     const [showPassword, setShowPassword] = useState(false);
+    const navigate = useNavigate();
+    const [formData, setFormData] = useState({
+        firsName: "",
+        lastName: "",
+        email: "",
+        mobile: "",
+        password: ""
+    })
+
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        })
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            const res = await API.post("/auth/register", formData);
+            alert("Registered successfully");
+
+            console.log(res.data);
+
+            navigate("/"); // Redirect to home page after successful registration
+        } catch (err) {
+            alert(err.response?.data?.message || "Error");
+        }
+    };
 
     return (
         <div className="register-container">
@@ -31,20 +62,20 @@ const RegisterPage = () => {
                     <span>OR REGISTER WITH EMAIL</span>
                 </div> */}
 
-                <form className="register-form" onSubmit={(e) => e.preventDefault()}>
+                <form className="register-form" onSubmit={handleSubmit}>
                     <div className="name-row">
                         <div className="input-field">
                             <label>First Name</label>
                             <div className="input-wrapper">
                                 <IoPersonOutline className="input-icon" />
-                                <input type="text" placeholder="John" required />
+                                <input type="text" name='firstName' placeholder="John" onChange={handleChange} required />
                             </div>
                         </div>
                         <div className="input-field">
                             <label>Last Name</label>
                             <div className="input-wrapper">
                                 <IoPersonOutline className="input-icon" />
-                                <input type="text" placeholder="Doe" required />
+                                <input type="text" name='lastName' placeholder="Doe" onChange={handleChange} required />
                             </div>
                         </div>
                     </div>
@@ -53,7 +84,7 @@ const RegisterPage = () => {
                         <label>Email Address</label>
                         <div className="input-wrapper">
                             <IoMailOutline className="input-icon" />
-                            <input type="email" placeholder="john@example.com" required />
+                            <input type="email" name='email' placeholder="john@example.com" onChange={handleChange} required />
                         </div>
                     </div>
 
@@ -61,7 +92,7 @@ const RegisterPage = () => {
                         <label>Mobile Number</label>
                         <div className="input-wrapper">
                             <IoMailOutline className="input-icon" />
-                            <input type="tel" placeholder="123-456-7890" required />
+                            <input type="tel" name='mobile' placeholder="123-456-7890" onChange={handleChange} required />
                         </div>
                     </div>
 
@@ -71,7 +102,9 @@ const RegisterPage = () => {
                             <IoLockClosedOutline className="input-icon" />
                             <input
                                 type={showPassword ? "text" : "password"}
+                                name='password'
                                 placeholder="Create a strong password"
+                                onChange={handleChange}
                                 required
                             />
                             <button

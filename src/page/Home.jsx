@@ -16,6 +16,16 @@ const Home = () => {
     const [fromResults, setFromResults] = useState([]);
     const [toResults, setToResults] = useState([]);
 
+    useEffect(() => {
+        // Check if the user has visited the page before
+        if (!localStorage.getItem('formVisited')) {
+            // Redirect the user to the Google Form
+            window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSfw4w_fBdX_0S6urZTIYavT5F4PvTiL4FNGpqk4UNFNYciP3w/viewform?usp=publish-editor';
+
+            // Mark the user as having visited by setting a flag in localStorage
+            localStorage.setItem('formVisited', 'true');
+        }
+    }, []);
 
     // API function
     const searchPlace = async (query, setResults) => {
@@ -186,14 +196,14 @@ const Home = () => {
                                 <Link
                                     to="/search"
                                     className="main-search-btn"
-                                    // onClick={() => {
-                                    //     navigate("/search", {
-                                    //         state: {
-                                    //             from,
-                                    //             to,
-                                    //         }
-                                    //     })
-                                    // }}
+                                // onClick={() => {
+                                //     navigate("/search", {
+                                //         state: {
+                                //             from,
+                                //             to,
+                                //         }
+                                //     })
+                                // }}
                                 >
                                     Search
                                 </Link>

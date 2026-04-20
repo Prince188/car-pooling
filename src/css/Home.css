@@ -48,6 +48,14 @@ body {
     transition: color 0.2s ease;
 }
 
+.nav-links button {
+    background: none;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
 .nav-search-wrapper {
     display: flex;
     align-items: center;
@@ -99,8 +107,39 @@ body {
 }
 
 .profile-icon {
-    font-size: 2.2rem;
+    font-size: 30px;
     color: #CCC;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    /* Align below the profile icon */
+    right: 15px;
+    background-color: var(--light-green);
+    /* Light green background for dropdown */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    min-width: 150px;
+    padding: 10px 0;
+    z-index: 10;
+    border: 1px solid var(--text-gray);
+    /* Light border */
+}
+
+.dropdown-menu .nav-action-btn {
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: #000;
+    /* Text color */
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    /* Smooth transition for hover effect */
 }
 
 /* Hero */
@@ -145,9 +184,10 @@ body {
 }
 
 
-.search-bar-card{
+.search-bar-card {
     overflow: visible;
 }
+
 .search-area-wrapper {
     overflow: visible !important;
     /* Critical: allows dropdown to float outside the card */

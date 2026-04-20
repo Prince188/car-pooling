@@ -1,10 +1,25 @@
 import React from 'react'
 import '../css/Home.css';
 import { HiSearch, HiPlusCircle, HiUserCircle } from 'react-icons/hi';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import logout from '../page/Logout';
+import { useState } from 'react';
 
 
 const Navbar = () => {
+    const navigate = useNavigate();
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+
+    const handleLogout = () => {
+        logout();
+        toggleDropdown(); // Close dropdown after clicking logout
+        navigate("/login");
+    };
+
+    const toggleDropdown = () => {
+        setIsDropdownOpen(!isDropdownOpen);
+    };
 
 
     return (
@@ -27,10 +42,17 @@ const Navbar = () => {
                         <HiPlusCircle size={16} /> <span>Offer a ride</span>
                     </Link>
                     <div className="nav-profile">
-                        {/* <div className='nav-flag'>
-                            <img src="https://flagcdn.com/in.svg" alt="India" />
-                        </div> */}
-                        <HiUserCircle className="profile-icon" />
+                        <HiUserCircle
+                            className="profile-icon"
+                            onClick={toggleDropdown} // Toggle dropdown on click
+                        />
+                        {isDropdownOpen && (
+                            <div className="dropdown-menu">
+                                <button className="nav-action-btn" onClick={handleLogout}>
+                                    Logout
+                                </button>
+                            </div>
+                        )}
                     </div>
                 </div>
 

@@ -11,6 +11,7 @@ import ScrollToTop from './component/ScrollToTop';
 import SearchCarSharing from './page/SearchCarSharing';
 import LoginPage from './page/Login';
 import RegisterPage from './page/Register';
+import PublicRoute from './component/PublicRoute';
 
 function App() {
   return (
@@ -19,12 +20,13 @@ function App() {
       <ScrollToTop />
       <Routes>
         <Route path='/' element={<Home />} />
+        {/* <Route path='/offer-ride' element={<ProtectedRoute><OfferRide /></ProtectedRoute>} /> */}
         <Route path='/offer-ride' element={<OfferRide />} />
         <Route path='/search' element={<Search />} />
         <Route path='/About-us' element={<AboutUs />} />
         <Route path='/Search-car-sharing' element={<SearchCarSharing />} />
-        <Route path='/login' element={<LoginPage />} />
-        <Route path='/signup' element={<RegisterPage />} />
+        <Route path='/login' element={<PublicRoute><LoginPage /></PublicRoute>} />
+        <Route path='/signup' element={<PublicRoute><RegisterPage /></PublicRoute>} />
         <Route path='*' element={<NotFound />} />
       </Routes>
       <Footer />
